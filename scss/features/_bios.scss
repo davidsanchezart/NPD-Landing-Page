@@ -1,0 +1,297 @@
+
+    /**
+     * @file _bios.scss
+     * @author Jimmy K. <jimmy@orbitmedia.com>
+     */
+
+    /* ======================================== */
+    /* Landing
+    /* ======================================== */
+
+    body.node-type-team-grid {
+
+        #right {
+
+            .title {
+                text-align: center;
+            }
+
+            .region-content {
+                margin-bottom: 35px;
+            }
+
+            @media (min-width: $screen-sm-min) {
+
+                .region-content {
+                    padding-right: 100px;
+                    padding-left: 100px;
+                }
+
+            }
+
+            .row {
+
+                margin-left: 0;
+                margin-right: 0;
+
+                .teamLandingItem {
+
+                    margin-bottom: 60px;
+                    padding-left: 45px;
+                    padding-right: 45px;
+                    text-align: center;
+
+                    /* Image */
+
+                    .image {
+
+                        @include border-radius(50%);
+                        @include box-shadow(0 0 0 4px #f1f1f1); // Works on iPad.
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+
+                    }
+
+                    /* Name */
+
+                    .name {
+                        font-size: 22px;
+                        margin-top: 15px;
+
+                        a {
+                            @extend %appendSingleArrow;
+                        }
+
+                    }
+
+                    /* Position */
+
+                    .position {
+                        color: #94969e;
+                        font-size: 13px;
+                        font-style: italic;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    /* ======================================== */
+    /* Detail
+    /* ======================================== */
+
+    body.node-type-team-bio {
+
+        #teamDetailBannerWrapper {
+
+            position: relative;
+
+            .image img {
+                width: 100%;
+                height: auto;
+                background: #f1f1f1;
+            }
+
+            /* Container Wrapper */
+
+            .containerWrapper {
+                font-size: 0;
+                padding-top: 20px;
+            }
+
+            /* Avatar */
+
+            .avatarWrapper {
+
+                // Dont show the avatar on mobile.
+                display: none;
+
+                .avatar {
+
+                    background: #a7d23a;
+                    @include border-radius(50%);
+                    // border: 3px solid #a7d23a;
+                    @include box-shadow(0 0 0 3px #a7d23a);
+                    overflow: hidden;
+
+                    img {
+                        @include border-radius(50%);
+                        width: 100%;
+                        height: auto;
+                    }
+
+                }
+
+            }
+
+            /* Info */
+
+            .infoWrapper {
+
+                /* Title */
+
+                .title {
+                    font-size: 45px;
+                    line-height: normal;
+                    margin: 0;
+                }
+
+                /* Position */
+
+                .position {
+                    font-size: 24px;
+                    font-style: italic;
+                    line-height: normal;
+                    margin: 0 0 10px;
+                }
+
+                /* Contact */
+
+                .contact {
+
+                    font-size: 13px;
+                    line-height: normal;
+
+                    .phone,
+                    .email {
+                        display: block;
+                    }
+
+                    .phone {
+                        margin-bottom: 5px;
+                    }
+
+                    .pipe {
+                        color: #86a33a;
+                        display: none;
+                        padding: 0 5px;
+                    }
+
+                }
+
+            }
+
+            /* Mobile */
+            @media (min-width: $screen-sm-min) {
+
+                /* Container Wrapper */
+                /* Absolutely positioned so container-fluid will stay centered. */
+
+                .containerWrapper {
+
+                    width: 100%;
+                    padding-top: 0;
+                    position: absolute;
+                    bottom: 0;
+
+                    .container-fluid {
+                        margin-bottom: -10px;
+                    }
+
+                }
+
+                .avatarWrapper,
+                .infoWrapper {
+                    // Design not possible with Bootstrap or Flexbox.
+                    display: inline-block;
+                    float: none;
+                    vertical-align: middle;
+                }
+
+                /* Info */
+
+                .infoWrapper {
+
+                    color: #fff;
+                    padding-bottom: 10px;
+                    padding-left: 30px;
+
+                    a {
+
+                        color: #fff;
+
+                        &:hover {
+                            color: #b0d64d;
+                            text-decoration: none;
+                        }
+
+                    }
+
+                    /* Title */
+
+                    .title {
+                        color: #fff;
+                        font-size: 32px;
+                        margin: 0;
+                    }
+
+                    /* Position */
+
+                    .position {
+                        font-size: 18px;
+                        margin: 0 0 5px;
+                        position: relative;
+                        left: -2px;
+                    }
+
+                    /* Contact */
+
+                    .contact {
+
+                        font-size: 12px;
+
+                        .phone,
+                        .email,
+                        .pipe {
+                            display: inline;
+                            margin: 0;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            /* Tablets */
+            @media (min-width: $screen-md-min) {
+
+                /* Info */
+
+                .infoWrapper {
+
+                    /* Title */
+
+                    .title {
+                        font-size: 45px;
+                        margin-bottom: 8px;
+                    }
+
+                    /* Position */
+
+                    .position {
+                        font-size: 24px;
+                        margin-bottom: 9px;
+                    }
+
+                    /* Contact */
+
+                    .contact {
+                        font-size: 13px;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }

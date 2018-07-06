@@ -1,0 +1,100 @@
+
+    /* ======================================== */
+    /* prettyPhoto (Mobile)
+    /* ======================================== */
+    
+    /**
+     * LIGHTBOXES (PRETTYPHOTO) 
+     *  - Flicker Gallery, Video Joins, Image Joins
+     */
+    
+    div.pp_content_container div.pp_details {
+        background: url("../images/backgrounds/bg-texture.jpg") 0 0 repeat;
+    }
+    div.pp_content_container div.pp_details a.pp_close {
+        color: #fff;
+        top: 27px;
+        right: 20px;
+        height: 40px;
+        width: 65px;
+        @include box-shadow(0px 0px 3px rgba(43, 37, 23, 0.25));
+        transition: none 0s ease 0s;
+        background: rgb(205, 108, 29) none repeat scroll 0% 0%;
+        @include text-shadow(1px 1px 0px rgb(0, 0, 0));
+        border-radius: 23px;
+        text-align: center;
+        border: none;
+        margin: 0px auto;
+        
+        &:after {
+            width: 65px;
+        }
+        &:hover {
+            background: #e17720;
+        }
+    }
+    
+    @media all and (max-width: $screen-md-min) {
+    
+        .pp_pic_holder{	
+        	width: 94% !important;
+        	height: auto;
+            left: 3% !important;
+            overflow: hidden;
+            
+            @media all and (min-width: $screen-sm-min) {
+                width: 60% !important;
+                left: 20% !important;
+            }
+        }
+        
+        .pp_details,
+        .pp_hoverContainer,
+        .pp_right .pp_content {
+            width: 100% !important;
+        }
+        .pp_hoverContainer {
+            height: 100% !important;
+        }
+        .pp_content_container .pp_left,
+        .pp_content_container .pp_right {
+            padding: 0 !important;
+        }
+        #pp_full_res img,
+        #pp_full_res video,
+        #pp_full_res embed,
+        #pp_full_res object {
+            width: 100% !important;
+            height: auto !important;
+        }
+        
+        #pp_full_res img{	
+        	width: 100% !important;
+        	height: auto !important;
+        	display:block;
+        	margin: 0 auto;
+        }
+        
+        div#videoWrapper {
+        	position: relative;
+        	padding-bottom: 56.25%; /* 16:9 */
+        	padding-top: 25px;
+        	height: 0;
+        }
+        div#videoWrapper iframe {
+        	position: absolute !important;
+        	top: 0 !important;
+        	left: 0 !important;
+        	width: 100% !important;
+        	height: 100% !important;
+        }
+        
+        div.pp_default .pp_details, div.light_rounded .pp_details, div.dark_rounded .pp_details, div.dark_square .pp_details, div.light_square .pp_details, div.facebook .pp_details {
+            margin: 10px 0;
+        }
+        div.light_rounded .pp_description, div.light_square .pp_description {
+            z-index: 1001;
+            position: relative;
+            margin: 0 65px 0 0;
+        }
+    }

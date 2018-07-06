@@ -1,0 +1,480 @@
+
+    /**
+     * @file _footer.scss
+     * @author Jimmy K. <jimmy@orbitmedia.com>
+     */
+
+    /* ======================================== */
+    /* Social Networks
+    /* ======================================== */
+
+    #socialWrapper {
+        padding: 30px 0;
+
+        /* ======================================== */
+        /* Newsletter Signup
+        /* ======================================== */
+
+        #newsletterSignupRegion {
+
+            .title {
+                color: #c1c6c9;
+                font-size: 32px;
+                padding-top: 5px;
+                text-transform: uppercase;
+            }
+
+            .intro {
+
+                color: #7a8a92;
+                font-size: 11px;
+                font-style: italic;
+                line-height: normal;
+            }
+
+            .title, .intro {
+                padding-bottom: 10px;
+            }
+
+            .form {
+                padding-bottom: 20px;
+            }
+
+            @media (min-width: $screen-md-min) {
+
+                .title, .intro, .form {
+                    padding-bottom: 0;
+                }
+
+                .intro {
+                    padding: 5px 0 0;
+                }
+
+            }
+
+        }
+
+    }
+
+    /* ======================================== */
+    /* Footer Links
+    /* ======================================== */
+/*
+    #footerLinksWrapper {
+        padding: 0 0 35px;
+        margin: 0 0 0;
+
+        @media all and (min-width: $screen-sm-min) {
+            padding: 0;
+        }
+        &:before {
+            border-top: 1px #fffdf5 solid;
+            content: '';
+            display: block;
+        }
+        > .container-fluid,
+        > .container {
+            @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+                width: auto;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+        }
+
+        #footerLinksRegion {
+            text-align: center;
+
+            section {
+                @include make-xs-column(12);
+                @include make-sm-column(3);
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            @media all and (min-width: $screen-sm-min) {
+                text-align: left;
+
+                .region {
+                    display: flex;
+
+                    section {
+                        flex: 1;
+                        border-right: 1px #fffdf5 solid;
+                        padding-top: 30px;
+                        padding-bottom: 30px;
+                        @include box-shadow(1px 0 0 #e6dbb8);
+                        
+                        &:last-of-type {
+                            border-right: none;
+                            @include box-shadow(none);
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+*/
+
+    /* ======================================== */
+    /* Footer Middle Contact Row
+    /* ======================================== */
+    #footerContact {
+        background: white;
+        color: #392f2d;
+        border-top: 1px solid #cdcdcd;
+        font-size: 13px;
+        line-height: (20/13);
+        overflow: hidden;
+        text-align: center;
+
+        @media all and (min-width: $screen-sm-min) {
+            text-align: left;
+        }
+        @media all and (min-width: $screen-md-min) {
+            font-size: 13px;
+            line-height: (22/13);
+        }
+
+        > .container-fluid,
+        > .container {
+            @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+                width: auto;
+                padding-left: 45px;
+                padding-right: 45px;
+            }
+        }
+
+        /* Parent Halfs */
+        .footerContactRegion {
+            @include make-sm-column(6);
+            margin: 22px 0 29px;
+
+            @media all and (min-width: $screen-sm-min) {
+                margin-bottom: 20px;
+            }
+        }
+        #footerContactLeft {
+            padding-bottom: 20px;
+            
+            @media all and (min-width: $screen-sm-min) {
+                border-right: solid 1px #cdcdcd;
+                padding-top: 7px;
+                padding-bottom: 13px;
+            }
+        }
+        #footerContactRight {
+            font-size: 14px;
+            margin: 0 0 42px;
+
+            @media all and (min-width: $screen-sm-min) {
+                float: left;
+                margin: 22px 0 19px;
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-left: 45px;
+            }
+        }
+        /* end */
+
+        /* Left Parent's Children */
+        .region-footer-left {
+            @include make-row();
+
+            @media all and (max-width: $screen-xs-max) {
+                text-align: center;
+            }
+
+            @media all and (max-width: $screen-sm-max) {
+                @include muscles();
+                -moz-box-orient: vertical;
+                -webkit-box-orient: vertical;
+                -webkit-flex-flow: column;
+                -ms-flex-direction: column;
+                flex-flow: column;
+                margin:0;
+            }
+            .block {
+                @include make-md-column(4);
+                margin: 2px 0;
+            }
+            
+            //Links
+            #block-menu-menu-footer-visit {
+
+                @media all and (max-width: $screen-sm-max) {
+                    -webkit-order: 3;
+                    -ms-flex-order: 3;
+                    order: 3;
+                    margin-top: 30px;
+                }
+                @media all and (min-width: $screen-sm-min) {
+                    margin-bottom: 20px;
+                }
+                @media all and (min-width: $screen-md-min) {
+                    float: right;
+                    margin-bottom: 0;
+                }
+            }
+            
+            //Logo
+            #block-block-2 {
+                p {
+                    margin-bottom: 10px;
+                }
+                @media all and (max-width: $screen-sm-max) {
+                    -webkit-order: 1;
+                    -ms-flex-order: 1;
+                    order: 1;
+                }
+            }
+            
+            //Social
+            #block-menu-menu-social-networks {
+                
+                @media all and (max-width: $screen-sm-max) {
+                    -webkit-order: 2;
+                    -ms-flex-order: 2;
+                    order: 2;
+                    margin-top: 10px;
+                }
+
+                @media all and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+                    clear: left;
+                }
+            }
+            a {
+                color: $orange;
+            }
+
+            // EU Disclaimer
+            #block-block-14 {
+                @include make-md-column(8);
+                color: #cdcdcd;
+                margin-top: 20px;
+                line-height: 1.3;
+                font-family: $headingFont;
+
+                @media screen and (max-width: $screen-xs-max) {
+                    border-bottom: solid 1px #444;
+                    margin-bottom: 20px;
+                    padding-bottom: 20px;
+
+                    img {
+                        display: block;
+                        margin: 0 auto 8px;
+                    }
+                }
+
+                @media all and (max-width: $screen-sm-max) {
+                    -webkit-order: 4;
+                    -ms-flex-order: 4;
+                    order: 4;
+                }
+
+                @media all and (min-width: $screen-sm-min) {
+                    img {
+                        float: left;
+                        margin-right: 8px;
+                    }
+                }
+
+                @media screen and (min-width: $screen-md-min) {
+                    margin-top: 10px;
+                }
+
+
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        /* end */
+
+        /* Right Parent's Children */
+        .region-footer-right {
+            
+            .block {
+                margin: 0 0 45px;
+                
+                @media all and (min-width: $screen-sm-min) {
+                    margin: 0 0 10px 0;
+                }
+                p {
+                    margin: 0;
+                }
+                @media all and (min-width: $screen-sm-min) {
+                    float: left;
+
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                }
+            }
+            #block-block-13 {
+                @include make-xs-column(4);
+                @include make-sm-column(4);
+                @include make-md-column(3);
+                text-align: left;
+                
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    -moz-transition: all 0.3s;
+                    -webkit-transition: all 0.3s;
+                    transition: all 0.3s;
+                }
+                &:hover img {
+                    -moz-transform: scale(1.1);
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+            }
+            #block-block-4 {
+                @include make-xs-column(8);
+                @include make-sm-column(8);
+                @include make-md-column(9);
+                float: right !important;
+                text-align: left;
+                
+                @media all and (min-width: $screen-md-min) {
+                    margin-top:9px;
+                }
+                p {
+                    font-size: 18px;
+                }
+            }
+        }
+        #block-menu-menu-social-networks {
+
+            li.first {
+                margin:8px 0 0;
+            }
+        }
+        /* end */
+
+        h2 {
+            color: #b2ab98;
+            font-size: 22px;
+            font-style: italic;
+            font-weight: $headingSemiBold;
+            line-height: 1;
+            margin: 0;
+        }
+        hr {
+            border-top: 1px #080808 solid;
+            border-bottom: 1px #2b2a29 solid;
+            margin: 13px 0 17px;
+            height: 0;
+        }
+        .button a,
+        a.button {
+            font-family: $bodyFont;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: bold;
+            padding: 13px 15px 11px;
+            margin: 0 6px 0 0;
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+
+
+    /* ======================================== */
+    /* Bottom
+    /* ======================================== */
+
+    #bottomWrapper {
+        background: #000;
+        color: $subfooterTextColor;
+        font-size: 12px;
+        line-height: 1;
+        text-align: center;
+
+        @media all and (min-width: $screen-sm-min) {
+            text-align: left;
+        }
+
+        .bottomWrapperInner {
+            padding: 15px 0;
+
+            > .container-fluid,
+            > .container {
+                @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+                    width: auto;
+                    padding-left: 25px;
+                    padding-right: 25px;
+                }
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+        .bottomLeftCol {
+            @include make-sm-column(9);
+
+            @media all and (min-width: $screen-sm-min) {
+                padding-top: 4px;
+            }
+        }
+        .bottomRightCol {
+            @include make-sm-column(3);
+            padding-top: 15px;
+            text-align: center;
+
+            @media all and (min-width: $screen-sm-min) {
+                padding-top: 0;
+                text-align: right;
+            }
+        }
+
+        a {
+            color: $subfooterTextColor;
+            font-weight: bold;
+        }
+
+        /* ======================================== */
+        /* Copyright
+        /* ======================================== */
+
+        #footerCopyright {
+
+            .links,
+            .copyright {
+                padding: 8px 0;
+            }
+
+            @media (min-width: $screen-sm-min) {
+                padding: 0;
+                text-align: left;
+
+                .links,
+                .copyright {
+                    display: inline-block;
+                }
+
+            }
+            
+            .copyright {
+                padding: 20px 0 0;
+                
+                @media all and (min-width: $screen-sm-min) {
+                    padding:8px 0;
+                }
+            }
+
+        }
+        
+        .region.region-footer-logo {
+            margin-top: 8px;
+        }
+
+    }

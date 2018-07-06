@@ -1,0 +1,48 @@
+
+    /**
+     * @file _tinymce.scss
+     *
+     * This file will be loaded by TinyMCE. All we're going to do in this
+     * file is piggyback off the default.css and then add some custom styles
+     * for the WYSIWYG.
+     *
+     * @author Jimmy K. <jimmy@orbitmedia.com>
+     */
+    
+    /* ======================================== */
+    /* Compass CSS3 Core Files
+    /* ======================================== */
+
+    @import "compass/css3";
+    
+    /* ======================================== */
+    /* Bootstrap Core Files
+    /* ======================================== */
+
+    @import "bootstrap/_variables.scss";
+
+    /* ======================================== */
+    /* Core
+    /* ======================================== */
+
+    @import "core/_vars.scss";
+    @import "core/_placeholders.scss";
+    
+    /* ======================================== */
+    /* Default Styles
+    /* ======================================== */
+    
+    @import "core/_default.scss";
+
+    body {
+        background: #fff !important;
+        padding: 10px !important;
+    }
+    
+    span.button,
+    p.button a,
+    input.button,
+    button.button,
+    a.button {
+        color: #000 !important;
+    }

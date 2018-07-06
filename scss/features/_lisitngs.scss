@@ -1,0 +1,166 @@
+
+    /**
+     * Global styles for listing pages - filters, view more, sort
+     * @file _listings.scss
+     * @author Jessica L. <jessica@orbitmedia.com>
+    */
+
+    /* ======================================== */
+    /* Layout
+    /* ======================================== */
+
+    #contentBottom {
+        /* 4em for prod cat */
+        margin: 2em 0 0;
+
+        /* no results */
+        .view-empty {
+            font-weight: bold;
+            font-style: italic;
+            padding: 25px 25px 100px 25px;
+        }
+    }
+
+    /* ======================================== */
+    /* Narrow / Filter Box
+    /* ======================================== */
+
+    .view .view-filters {
+        @extend %highlight;
+
+        .views-exposed-widgets,
+        .views-exposed-widget {
+            float: none;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        label {
+            @extend %headingFontSemiBold;
+            font-size: 19px;
+            line-height: 1;
+            margin: 0 20px 0 0;
+            display: inline;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+        
+        
+        .views-widget {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 10px 0 0;
+            width: 100%;
+            
+            @media all and (min-width: $screen-md-min) {
+                margin: 0;
+                width: 360px;
+            }
+        }
+
+        /* heading */
+        .viewFitlersHeader {
+            display: none;
+            @extend %highlightShadowUp;
+            font-size: 14px;
+            line-height: (20/14);
+            margin: -20px -25px 20px;
+            padding: 20px 25px 15px;
+
+            .filterHeader-Right {
+                @extend .hidden-xs;
+                text-align: right;
+            }
+        }
+
+        .filterHeader-Bottom {
+            /*
+            @extend .hidden-lg;
+            @extend .hidden-md;
+            @extend .hidden-sm;
+            */
+            font-size: 14px;
+            line-height: 1;
+            a {
+                display: block;
+                padding: 25px 0 3px;
+            }
+        }
+
+        a {
+            font-style: italic;
+            font-weight: bold;
+
+            &.reset-filters,
+            &.reset-filter {
+                display: none;
+
+                &:before {
+                    @extend %fontawesome;
+                    content: "";
+                    margin: 0 4px 0 0;
+                }
+            }
+        }
+    }
+
+    /* ======================================== */
+    /* View More
+    /* ======================================== */
+
+    .date-nav-wrapper,
+    .pager-load-more {
+        border-top: $listingDivider;
+        clear: both;
+        position: relative;
+        margin: 0;
+
+        &:before {
+            content: '';
+            border-top: $listingDivider;
+            position: absolute;
+            top: -4px;
+            width: 100%;
+        }
+
+        a {
+            margin: 0 0 $listingPadding;
+        }
+        ul li {
+            list-style: none;
+        }
+    }
+    .pager-load-more li {
+        a {
+            @extend .button;
+        }
+    }
+    .date-nav-wrapper .date-prev a, .date-nav-wrapper .date-next a {
+        @extend .button;
+    }
+    .date-nav-wrapper {
+        margin: 25px 0 0;
+        padding: 55px 0 0;
+    }
+    .date-nav-wrapper .date-heading {
+        top: 0;
+        padding: 0 110px;
+
+        @media all and (min-width: 540px) {
+            top: 24px;
+        }
+
+        h3 {
+            @extend %headingFontBold;
+            font-size: 19px;
+            color:#33312f;
+            line-height: 1;
+        }
+    }
+    .date-nav-wrapper ul.pager {
+        position: relative;
+
+        @media all and (min-width: 540px) {
+            position: static;
+        }
+    }

@@ -1,0 +1,90 @@
+
+    /**
+     * @file _drupal.scss
+     *
+     * Style various Drupal elements. This is actually desktop-first, not
+     * mobile-first. Sorry, guys.
+     *
+     * @author Jimmy K. <jimmy@orbitmedia.com>
+     */
+
+    /* ======================================== */
+    /* Alerts
+    /* ======================================== */
+
+    .alert {
+        margin: 20px 0 0;
+    }
+
+    .tabs,
+    .nav-tabs {
+        margin-bottom: 20px;
+    }
+
+    /* ======================================== */
+    /* Pagination
+    /* ======================================== */
+
+    .pagination {
+        margin: 40px 0 0;
+
+        li {
+
+            a {
+                @include background-image(linear-gradient(#f3f3f3, #f0f0f0));
+                border: 1px solid #dadada;
+                color: #828282;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 5px 10px;
+                text-transform: capitalize;
+            }
+
+            &.active a,
+            a:hover {
+                @include background-image(image-url('/sites/all/themes/orbit/resources/images/backgrounds/pagination.png'), linear-gradient(#8ec2e4, #74b3de));
+                background-position: bottom center;
+                background-repeat: no-repeat;
+                border: none !important;
+                color: #fff;
+                padding: 6px 11px;
+                text-shadow: 0 -1px rgba(#000, 0.28);
+            }
+
+        }
+
+    }
+
+    /* Small devices (tablets, 768px+) */
+    @media (max-width: $screen-sm-max) {
+
+        /* ======================================== */
+        /* Toolbar
+        /* ======================================== */
+
+        body.toolbar-drawer {
+            padding-top: 0 !important;
+        }
+
+        #toolbar {
+            display: none;
+        }
+
+        /* ======================================== */
+        /* Tabs
+        /* ======================================== */
+
+        .tabs,
+        .nav-tabs /* Bootstrap */ {
+            display: none;
+        }
+
+        /* ======================================== */
+        /* Conextual Links
+        /* ======================================== */
+
+        .contextual-links-wrapper {
+            display: none !important;
+        }
+
+    }

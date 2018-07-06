@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-Equiv="Cache-Control" Content="no-cache">
+    <meta http-Equiv="Pragma" Content="no-cache">
+    <meta http-Equiv="Expires" Content="0">
+    <title>National Prosecco Day</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+        <link rel="stylesheet" type="text/css" href="css/npDay.css">
+
+        <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+
+  </head>
+<body>
+<div class="container" id="wrapper"> <!-- Content Wrapper Start-->
+
+
+<!-- National Prosecco Day Row with clock-->
+    <div class="row" id="row2BG">
+        <div class="container" style="text-align:center; padding:.5%">
+            <h2 style="margin:2% auto 0 auto;">COUNTDOWN TO</h2>
+            <img id="promoImg" src="images/NPpromo.png"/>
+            <div id="clockBG">
+                <!-- Display the countdown timer in an element -->
+                    <h3 id="demo"></h3>
+            </div>
+        </div>
+    </div>
+
+<!-- 2 Column Row Girl on Left and Story on the right-->
+    <div class="row" style="background-color:#37BBA3;">
+        
+        <div class="col-md-4" id="stripes2BG">
+            <img  id="girl" src="images/riondoGirl.png"/>
+        </div>
+
+
+        <div class="col-md-7" id="npAbout">
+                    <h4>Festivale Riondo</h4>
+                    <h3>Come celebrate with the prosecco that started it all</h3>
+                    <p>In the foothills of Mount Riondo back in the Roman era, farmers and town’s people celebrated a joyous harvest festival. At the heart of the revelry was a wonderful beverage they called “welcoming wine.” Travelers came from all across the Veneto Region. They played bocce, watched puppet shows and enjoyed incredible foods and pastas. Soon this popular wine was being served at the powerful tables of Italy’s elite.</p>
+                    <p>Today we celebrate National Prosecco Day and its official wine, Riondo Prosecco, still made from the same Glera grapes grown all those centuries ago. What started in the tiny town of Prosecco is now a source of pride for Italians everywhere. Their delightfully bubbly wine even outsells Champagne and the original festival has become an official celebration the world over.</p>
+        </div>
+
+    </div>
+
+    <!-- Hero - Responsive iFrame Row-->
+  <div class="row">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/275927518" allowfullscreen></iframe>
+        </div>
+
+  </div>
+
+<!-- Footer Row-->
+     <div class="row" id="footer">
+            <h5>Find the nearest place to buy Riondo Prosecco with our easy-to-use</h5>
+    <a href="https://www.riondo.us/wine-finder" target="blank_"><img src="images/wineFinder.jpg" id="wineFinderimg"/></a>
+
+       </div>
+
+</div> <!-- Content Wrapper End-->
+
+</body>
+
+
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Aug 13, 2018 06:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+
+
+
+
+</html>

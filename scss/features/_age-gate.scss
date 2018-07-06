@@ -1,0 +1,56 @@
+#ageGate {
+
+    // Modal window
+    .modal-dialog {
+        text-align: center;
+        
+        .modal-content {
+            border: none;
+            @include box-shadow(none);
+        }
+        .modal-footer {
+            padding-top: 0;
+        }
+        
+        /* buttons */
+        .button-wrapper {
+            background: none;
+            @include box-shadow(none);
+            text-align: center;
+            margin: 0;
+            padding: 30px 0 0;
+            
+            > .buttondiv {
+                width: auto;
+                display: inline-block;
+                margin: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+                background: none !important;
+                float: none;
+            
+                &.yes,
+                &.no {
+                    cursor: pointer;
+                    @extend .col-sm-4;
+                    float: none !important;
+                    display: inline-block;
+                    width: auto !important;
+                    margin-bottom: 10px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    
+                    @media all and (min-width: $screen-sm-min) {
+                        margin:0;
+                    }
+                }
+            }
+        }
+        
+        section#messagesWrapper .button-wrapper {
+            border-top: 1px rgba(#000, 0.10) solid;
+            margin: 20px 20px 0;
+            padding: 35px 0;
+        }
+    }
+}

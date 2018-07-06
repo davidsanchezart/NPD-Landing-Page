@@ -1,0 +1,584 @@
+
+    /**
+     * @file _mobilemenu.scss
+     *
+     * Cleaned up mobile navigation CSS for Drupal websites that are built
+     * on Bootstrap.
+     *
+     * In this file, the mobile navigation styles are reset, then iterated from
+     * Level 1 down to Level 3. We do not style past Level 3.
+     *
+     * Colors can be changed via the variables below. Uncomment the first set
+     * of variables to use the basic colors to help understand styling.
+     *
+     * @since Drupal 7.x-1.x
+     * @author Jimmy K. <jimmy@orbitmedia.com>
+     */
+
+    @import "../core/vars";
+
+    /* ================================================== */
+    /* Complex Colors
+    /* ================================================== */
+
+    $l1_backgroundColor: #fff;
+    $l1_activeBackgroundColor: #fff;
+    $l1_textColor: #000;
+    $l1_activeTextColor: #000;
+    $l1_textSize: 16px;
+    $l1_borderColor: #e5e5e5;
+
+    $l2_backgroundColor: #f6f6f6;
+    $l2_activeBackgroundColor: #f6f6f6;
+    $l2_textColor: #000;
+    $l2_activeTextColor: #000;
+    $l2_textSize: 15px;
+    $l2_leftPadding: 48px;
+    $l2_borderColor: #dddddd;
+
+    $l3_backgroundColor: #e9e9e9;
+    $l3_activeBackgroundColor: #e9e9e9;
+    $l3_textColor: #000;
+    $l3_activeTextColor: #000;
+    $l3_textSize: 14px;
+    $l3_leftPadding: 78px;
+    $l3_borderColor: #d1d1d1;
+
+    $hover: rgba(225, 88, 33, 0.5);
+
+/*
+    $l4_backgroundColor: transparent;
+    $l4_activeBackgroundColor: transparent;
+    $l4_textColor: #000;
+    $l4_activeTextColor: #000;
+    $l4_textSize: 13px;
+*/
+
+    /* ================================================== */
+    /* Menu Styles
+    /* ================================================== */
+
+    #topWrapper {
+
+        /* Header */
+
+        .navbar-header {
+            margin: 0;
+        }
+
+        /* Toggle */
+
+        .navbar-toggle {
+            @extend .hidden-md, .hidden-lg;
+            height: auto;
+            @include border-radius(0);
+            margin-top: 35px;
+            margin-right: 25px;
+
+            @media (min-width: $screen-sm-min) {
+                margin-right: 0;
+            }
+
+            .icon {
+                display:inline-block;
+                
+                .icon-bar {
+                    background-color: $orange;
+                    width: 20px;
+                    height: 3px;
+                }
+                .icon-bar + .icon-bar {
+                    margin-top: 2px;
+                }
+            }
+        }
+
+        /* Collapse */
+
+        .navbar-collapse {
+            background: #fff;
+            border: none;
+            max-height: none;
+            padding: 0;
+
+            @media (min-width: $screen-md-min) {
+                background-color: transparent;
+                background-image: none;
+            }
+
+            &.in {
+                overflow-y: visible;
+            }
+
+            /* Close */
+
+            .close {
+                float: none;
+                font-weight: bold;
+                line-height: normal;
+                opacity: 1;
+                text-align: center;
+                text-shadow: none;
+                text-transform: none;
+
+                @media (min-width: $screen-md-min) {
+                    display: none;
+                }
+                button {
+                    background: #e15821;
+                    border: none;
+                    display: block;
+                    @extend %headingFontMedium;
+                    color: #fff;
+                    font-size: 18px;
+                    font-style: normal;
+                    text-transform: uppercase;
+                    padding: 14px 0 11px;
+                    margin: 0;
+                    height: auto;
+                    width: 100%;
+                    top: 0;
+
+                    &:before,
+                    &:after {
+                        @extend %fontawesome;
+                        content: "\f102";
+                        padding: 0 10px;
+                        position: relative;
+                        top:0;
+                        border: none;
+                    }
+                    &:hover {
+                        text-decoration: none;
+                        background: $hover;
+                        color: #000;
+                    }
+
+                }
+
+            }
+
+            /* Navigation */
+
+            nav {
+
+                /* ======================================== */
+                /* Global Styles
+                /* ======================================== */
+
+                ul {
+                    @extend %resetList;
+
+                    &.dropdown-menu {
+                        float: none;
+                        position: static;
+                        top: 0;
+                    }
+
+                    li {
+                        font-family: $bodyFont;
+                        position: relative;
+
+                        &.mega-menu {
+                            display: none;
+
+                            @media all and (min-width: $screen-md-min) {
+                                display: block;
+                            }
+                        }
+                        img {
+                            display: none;
+                        }
+
+                        &.open > ul,
+                        &.toggle-lock > ul {
+                            display: block;
+                        }
+
+                        a {
+                            background-color: transparent !important;
+                            line-height: normal;
+                        }
+
+                        a.dropdown-toggle {
+                            box-sizing: content-box;
+                            width: 29px;
+                            height: 47px;
+                            font-size: 18px;
+                            line-height: 47px;
+                            color: $orange;
+                            cursor: pointer;
+                            padding: 0 10px;
+                            position: absolute;
+                            top: 8px;
+                            right: 0;
+                            z-index: 500;
+                            text-align: center;
+                            margin-right: 25px;
+
+                            @media (min-width: $screen-md-min) {
+                                display: none;
+                            }
+                            &:before {
+                                content: '';
+                                display: block;
+                                width: 1px;
+                                height: 100%;
+                                position: absolute;
+                                left: 0;
+                            }
+                            .caret {
+                                width: auto;
+                                height: auto;
+                                border: none;
+                                display: block;
+                                margin: 0;
+                                padding-left: 5px;
+                                text-align: center;
+
+                                &:before {
+                                    line-height: 30px;
+                                }
+
+                            }
+
+                        }
+
+                        > .dropdown-toggle .caret:before {
+                            @extend %fontawesome;
+                            content: "\f055";
+                        }
+
+                        &.open > .dropdown-toggle .caret:before,
+                        &.toggle-lock .dropdown-toggle .caret:before {
+                            @extend %fontawesome;
+                            content: "\f056";
+                        }
+
+                        .dropdown-menu {
+                            min-width: 0;
+                            border: none;
+                            @include border-radius(0);
+                            @include box-shadow(none);
+                        }
+
+                    }
+
+                }
+
+                /* ======================================== */
+                /* Level 1
+                /* ======================================== */
+
+                > ul {
+                    background-color: $l1_backgroundColor;
+
+                    @media (min-width: $screen-md-min) {
+                        background-color: transparent;
+                        border-top: none;
+                        float: right;
+                    }
+                    &:before {
+                        @media (min-width: $screen-md-min) {
+                            content:'';
+                            display:block;
+                        }
+                    }
+
+                    > li {
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        line-height: (20/16);
+
+                        &.expanded.open /* Bootstrap */{
+                            background-color: $l1_activeBackgroundColor;
+                            @media (min-width: $screen-md-min) {
+                                background-color: transparent;
+                            }
+                        }
+                        &:hover,
+                        &.expanded.open:hover {
+                            background: $hover;
+                            @media (min-width: $screen-md-min) {
+                                background-color: transparent;
+                            }
+                        }
+
+                        @media screen and (max-width: $screen-sm-max) {
+                            &:last-child {
+                                > a:not(.dropdown-toggle) {
+                                    border-bottom-color: transparent;;
+                                }
+                            }
+                        }
+
+                        @media (min-width: $screen-md-min) {
+                            border: none;
+                            float: left;
+                        }
+
+                        > a:not(.dropdown-toggle) {
+                            font-family: $headingFont;
+                            font-weight: $headingMedium;
+                            color: $l1_textColor;
+                            font-size: $l1_textSize;
+                            white-space: normal !important;
+                            padding: 22px 0 22px 10px;
+                            margin-left: 10px;
+                            margin-right: 10px;
+                            border-bottom: 1px solid $l1_borderColor;
+
+                            @media all and (min-width: $screen-md-min) {
+                                font-size: 17px;
+                                font-weight: $headingBold;
+                                color: $green;
+                                border: 1px solid transparent;
+                                text-transform: uppercase;
+                                line-height: 1;
+                                margin: 44px 17px 30px;
+                                padding: 8px 0;
+                            }
+                        }
+
+                        @media (min-width: $screen-md-min) {
+                            &.first > a {
+                                margin-left: 0;
+                            }
+                            &.last > a {
+                                margin-right: 0;
+                            }
+                        }
+
+                        > a.active,
+                        > a:not(.dropdown-toggle):focus {
+                            background-color: $l1_activeBackgroundColor;
+                            color: $l1_activeTextColor;
+                            white-space: normal !important;
+                        }
+
+                        @media (min-width: $screen-md-min) {
+                            &.active-trail > a,
+                            > a.active,
+                            > a:not(.dropdown-toggle):focus {
+                                background-color: transparent;
+                                position: relative;
+                                color: $navy;
+                                border-top-color: $blue;
+                                border-bottom-color: $blue;
+                            }
+                        }
+
+                        > a:not(.dropdown-toggle):hover {
+                            background-color: $l1_activeBackgroundColor;
+                            
+                            @media (min-width: $screen-md-min) {
+                                color: $navy;
+                                border-top-color: $blue;
+                                border-bottom-color: $blue;
+                            }
+                        }
+                    }
+
+                }
+
+                /* ======================================== */
+                /* Level 2
+                /* ======================================== */
+
+                > ul > li.expanded.open {
+
+                    @media all and (min-width: $screen-md-min) {
+                        background: transparent;
+                        @include box-shadow(none);
+                    }
+                }
+
+                > ul > li > ul.dropdown-menu {
+                    background: $l2_backgroundColor;
+
+                    @media (min-width: $screen-md-min) {
+                        display: none;
+                    }
+
+                    > li {
+                        text-transform: uppercase;
+                        padding-left: $l2_leftPadding;
+
+                        &.expanded.open {
+                            > a:not(.dropdown-toggle) {
+                                border-bottom-color: transparent;
+                            }
+                        }
+
+                        &.expanded.open /* Bootstrap */ {
+                            background-color: $l2_activeBackgroundColor;
+                        }
+                        &:hover,
+                        &.expanded.open:hover {
+                            background: $hover;
+                        }
+
+                        &:last-child {
+                            > a:not(.dropdown-toggle) {
+                                border-bottom-color: transparent;;
+                            }
+                        }
+
+                        > a:not(.dropdown-toggle) {
+                            font-family: $headingFont;
+                            font-weight: $headingMedium;
+                            color: $l2_textColor;
+                            font-size: $l2_textSize;
+                            white-space: normal !important;
+                            padding: 20px 60px 20px 2px;
+                            margin-right: 10px;
+                            border-bottom: 1px solid $l2_borderColor;
+                        }
+
+                        > a.active,
+                        > a:not(.dropdown-toggle):focus,
+                        > a:not(.dropdown-toggle):hover {
+                            background-color: $l2_activeBackgroundColor;
+                            color: $l2_activeTextColor;
+                        }
+                        
+                        a.dropdown-toggle {
+                            height: 47px;
+                            top: 5px;
+                        }
+                    }
+                    
+                }
+
+                /* ======================================== */
+                /* Level 3
+                /* ======================================== */
+
+                > ul > li > ul.dropdown-menu > li > ul.dropdown-menu {
+                    background-color: $l3_backgroundColor;
+                    margin-left: -$l2_leftPadding;
+
+                    > li {
+                        border-top: none;
+                        padding-left: $l3_leftPadding;
+                        text-transform: none;
+
+                        &.expanded.open {
+                            > a:not(.dropdown-toggle) {
+                                border-bottom-color: transparent;
+                            }
+                        }
+
+                        &.expanded.open /* Bootstrap */ {
+                            background-color: $l3_activeBackgroundColor;
+                        }
+                        &:hover,
+                        &.expanded.open:hover {
+                            background: $hover;
+                        }
+
+                        &:last-child {
+                            > a:not(.dropdown-toggle) {
+                                border-bottom-color: transparent;;
+                            }
+                        }
+
+                        > a:not(.dropdown-toggle) {
+                            font-family: $headingFont;
+                            font-weight: $headingMedium;
+                            color: $l3_textColor;
+                            font-size: $l3_textSize;
+                            white-space: normal !important;
+                            padding: 20px 30px 20px 0;
+                            border-bottom: 1px solid $l3_borderColor;
+                            margin-right: 10px;
+                        }
+
+                        > a.active,
+                        > a:not(.dropdown-toggle):focus,
+                        > a:not(.dropdown-toggle):hover {
+                            background-color: $l3_activeBackgroundColor;
+                            color: $l3_activeTextColor;
+                        }
+/*
+                        a.dropdown-toggle {
+                            height: 45px;
+                            top: 3px;
+                        }
+*/
+                    }
+                }
+                
+                /* ======================================== */
+                /* Level 4
+                /* ======================================== */
+/*
+                > ul > li > ul > li > ul.dropdown-menu > li > ul.dropdown-menu {
+                    background-color: $l4_backgroundColor;
+                    padding: 0 0 11px;
+                    margin: 0;
+
+                    > li {
+                        border-top: none;
+
+                        &.expanded.open,
+                        &:hover {
+                            background-color: $l4_activeBackgroundColor;
+                        }
+
+                        > a:not(.dropdown-toggle) {
+                            font-family: $headingFont;
+                            font-weight: $headingMedium;
+                            color: $l4_textColor;
+                            font-size: $l4_textSize;
+                            padding: 10px 30px 10px 45px;
+                        }
+
+                        > a.active,
+                        > a:not(.dropdown-toggle):focus,
+                        > a:not(.dropdown-toggle):hover {
+                            background-color: $l4_activeBackgroundColor;
+                            color: $l4_activeTextColor;
+                        }
+                        
+                        a.dropdown-toggle {
+                            height: 45px;
+                            top: 3px;
+                        }
+
+                    }
+                }
+*/
+
+            }
+
+        }
+
+        @media (min-width: $screen-md-min) {
+
+            /* Collapse */
+
+            nav ul li {
+
+                a {
+                    color: #000;
+                    line-height: normal;
+                    padding: 0;
+                    @include transition(color 0.3s ease, border-color 0.3s);
+                }
+
+                &.active-trail a,
+                a:hover {
+                    background-color: transparent;
+                    color: #85af1b;
+                }
+
+                ul {
+                    display: none;
+                }
+
+            }
+
+        }
+
+    }

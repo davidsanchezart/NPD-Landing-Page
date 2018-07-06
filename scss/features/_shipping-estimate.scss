@@ -1,0 +1,340 @@
+
+    /**
+     * Styles for the shipping estimate form - content block
+     * holds styles for page display and cart display
+     * @file _shipping-estimate.scss
+     * @author Jessica L. <jessica@orbitmedia.com>
+    */
+
+    /* ======================================== */
+    /* Shipping Est. Message on Cart
+    /* ======================================== */
+    .shipping-qty-message {
+        background: rgba(#000, 0.05);
+        color: #000;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: (20/16);
+        padding: 18px 20px 17px 50px;
+        margin: 0 0 20px;
+        position: relative;
+        text-align: left;
+        @include box-shadow(INSET 0 0 5px rgba(#000, 0.05));
+
+        &:before {
+            @extend %fontawesome;
+            content: '';
+            font-size: 22px;
+            position: absolute;
+            left: 15px;
+            margin: -3px 0 0;
+        }
+    }
+
+    /* ======================================== */
+    /* Page content block
+    /* ======================================== */
+    .node-type-product-display #contentBottom {
+        margin: 0;
+    }
+
+    #block-views-shipping-estimate-form-block {
+        @include make-row();
+        border-top: 1px solid rgba(#736f67, 0.2);
+        padding: $listingPadding 0 0;
+
+        &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: rgba(#736f67, 0.2);
+            position: absolute;
+            top: 2px;
+            left: 0;
+        }
+
+        h2.block-title {
+            @extend %headingFontMedium;
+            font-size: 19px;
+            line-height: (25/19);
+            margin: 0 0 20px 15px;
+        }
+        .tel {
+            color: #33312f;
+        }
+        
+        > .content > div {
+            @include make-sm-column(6);
+        }
+        
+        > .contextual-links-wrapper {
+            display: none;
+        }
+        
+        .view-content {
+            margin: 15px 0 0;
+        }
+        
+    }
+
+    /* page block styles only */
+    .block .view-shipping-estimate-form {
+        @extend %highlightShadow;
+        padding: 20px 15px 15px;
+
+        @media all and (min-width: $screen-sm-min) {
+            padding: 20px 20px 15px;
+        }
+
+        .view-header {
+            display: none;
+            //@include make-sm-column(12);
+
+            h2 {
+                font-size: 19px;
+                font-weight: $headingMedium;
+                line-height: 1.31579;
+                margin: 0 0 20px;
+            }
+        }
+        
+        .shippingEstLeft {
+            margin: 0 0 20px;
+
+            @media all and (min-width: $screen-sm-min) {
+                margin: 0;
+            }
+        }
+    }
+
+    /* state dropdown actions */
+    .view-shipping-estimate-form {
+
+        .view-filters {
+            background: none;
+            padding: 0;
+            @include box-shadow(none);
+            
+            body.overlay & {
+                margin-left: 0;
+                
+                @media all and (min-width: $screen-sm-min) {
+                    margin-left: 200px;
+                }
+            }
+            
+            .views-widget {
+                width: 100%;
+                margin: 0 0 15px;
+                
+                @media all and (min-width: $screen-md-min) {
+                    width: 200px;
+                    margin: 0;
+                }
+            }
+        }
+        
+        .field-content {
+            float: left;
+            margin: 0;
+            
+            @media all and (min-width: $screen-md-min) {
+                margin-left: 20px;    
+            }
+            
+            ul {
+                list-style: none;
+                padding: 0 0 0 20px;
+                
+                li {
+                    margin: 0;
+                }
+            }
+            
+            .field-name-field-se-qty-range {
+                float: left;
+                width: 110px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+            .field-name-field-se-price {
+                float: left;
+                width: 80px;
+                font-size: 14px;
+            }
+        }
+
+        label {
+            text-transform: uppercase;
+            padding-top: 17px;
+        }
+        .view-filters label,
+        span.views-label {
+            display: block;
+            float: left;
+            font-family: $bodyFont;
+            font-size: 14px;
+            font-weight: bold;
+            font-variant: normal;
+            color: #33312f;
+            width: 100%;
+            margin: 0 0 15px;
+            
+            @media all and (min-width: $screen-sm-min) {
+                 width: 150px;
+            }
+        }
+        .field-item {
+            color: #33312f;
+        }
+
+        #edit-field-shipping-state-value-wrapper,
+        .views-field-field-shipping-range {
+            @extend .row;
+            float: none;
+            width: auto;
+
+            body.overlay & {
+                margin: 0 -20px;
+            }
+
+            label,
+            span.views-label-field-shipping-range {
+                @include make-xs-column(6);
+                @include make-md-column(4);
+
+                @media all and (min-width: $screen-sm-min) {
+                    padding-right: 20px;
+                }
+
+                body.overlay & {
+                    @include make-sm-column(4);
+                    @include make-sm-column-offset(4);
+                    padding-left: 20px;
+                    padding-right: 10px;
+
+                    @media all and (min-width: $screen-sm-min) {
+                        padding-right: 20px;
+                    }
+                }
+            }
+            > .views-widget,
+            > .field-content {
+                @include make-xs-column(6);
+                @include make-md-column(6);
+                margin: 0;
+                padding-left: 0;
+
+                @media all and (min-width: $screen-sm-min) {
+                    padding-left: 15px;
+                }
+
+                body.overlay & {
+                    @include make-sm-column(4);
+                    padding: 0 20px 0 0;
+                }
+
+                select {
+                    width: 100%;
+                    height: 40px;
+                }
+            }
+        }
+
+        .field-collection-view {
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .field-collection-view .content {
+            @include make-row();
+            font-size: 14px;
+            line-height: (18/14);
+            margin-bottom: 4px;
+
+            .shippingRangeLabel {
+                @include make-xs-column(7);
+                font-weight: bold;
+                padding-right: 0;
+                white-space: nowrap;
+            }
+            .shippingRangeValue {
+                @include make-xs-column(5);
+            }
+        }
+        
+        .view-content .views-row {
+            body.overlay & {
+                margin-left: 0;
+                
+                @media all and (min-width: $screen-sm-min) {
+                    margin-left: 200px;
+                }
+            }
+        }
+
+        .views-field-nothing {
+            clear: both;
+            border-top: 1px #e0d7c1 solid;
+            font-style: italic;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 10px 0 0;
+            margin: 18px 0 0;
+        }
+    }
+
+    /* views block content */
+    .shippingEstRight {
+        font-size: 14px;
+        line-height: (22/14);
+
+        p {
+            margin: 0 0 14px;
+        }
+    }
+
+    /* Overwrites for Shipping on Cart */
+    body.overlay .view-shipping-estimate-form {
+        color: #33312f;
+
+        .view-header {
+            @extend %headingFontMedium;
+            font-size: 22px;
+            line-height: 1.31579;
+            margin: 0 0 25px;
+
+            @media all and (min-width: $screen-sm-min) {
+                position: absolute;
+                top: 48px;
+                left: 25px;
+                margin: 0;
+                width: 25%;
+            }
+
+            h2 {
+                font-size: 24px;
+                line-height: (28/24);
+                margin: 0;
+            }
+        }
+
+        //.shippingEstLeft {
+            .views-field-nothing {
+                border-top: 1px #fff solid;
+                @include box-shadow(0 -1px rgba(0, 0, 0, 0.08));
+                padding: 16px 0 0;
+                margin: 20px 0 0;
+            }
+            .view-content {
+                margin: 15px 0 0;
+            }
+       //}
+
+    }
+
+    .views-exposed-form .views-widget-filter-field_shipping_state_value {
+        padding: 0.5em 0 0;
+    }

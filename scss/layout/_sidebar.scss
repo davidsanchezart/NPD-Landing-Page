@@ -1,0 +1,541 @@
+
+    /**
+     * @file _sidebar.scss
+     * @author Jimmy K. <jimmy@orbitmedia.com>
+     */
+    
+    /* ======================================== */
+    /* Mixins
+    /* ======================================== */ 
+
+    @mixin sidebar-caption() {
+        background: #ece6d7;
+        @extend %headingFontBold;
+        color: #171615;
+        font-size: 15px;
+        line-height: (20/15);
+        text-transform: uppercase;
+        padding: 10px;
+        position: static;
+        text-align: center;
+        text-shadow: none;
+    }
+    
+    /* ======================================== */
+    /* Layout
+    /* ======================================== */
+
+    #sidebar {
+
+        .block-bean .block-title {
+            // Dont show bean titles in the sidebar.
+            display: none;
+        }
+
+        /* ======================================== */
+        /* Clientside Validation
+        /* ======================================== */
+
+        .clientside-error {
+            font-size: 13px;
+            padding: 20px;
+        }
+
+        /* ======================================== */
+        /* Webform: Resource Download
+        /* ======================================== */
+
+        .sidebarResourceFormWrapper {
+            background: #f1f1f1;
+            border: 1px solid #ddd;
+            @include box-shadow(0 1px 0 #f7f7f7 inset);
+            padding: 30px;
+
+            .webform-client-form {
+                background: transparent;
+                border: none;
+                @include box-shadow(none);
+                padding: 0;
+
+                #webform-component-header {
+
+                    h2 {
+
+                        line-height: 30px;
+                        text-transform: none;
+
+                        &:after {
+                            color: #c4c4c4;
+                            content: "";
+                            font-family: "FontAwesome", sans-serif;
+                            font-size: 24px;
+                            padding-left: 5px;
+                        }
+
+                    }
+
+                    p {
+                        font-style: italic;
+                        margin-bottom: 10px;
+                    }
+
+                }
+
+                .form-submit {
+                    width: 100%;
+                    float: none;
+                    letter-spacing: 0.5px; /* Unique to this button. */
+                    margin-top: 8px;
+                    padding-right: 10px;
+                    padding-left: 10px;
+                    text-transform: none;
+                }
+
+            }
+
+        }
+
+    }
+
+    /* ======================================== */
+    /* Sidebar Widgets
+    /* ======================================== */
+    
+    .sideBar_ElementHolder,
+    .region-sidebar section.block {
+        margin-bottom: 20px;
+    }
+    
+    .sidebarWrapper .block,
+    //.region-sidebar section.block,
+    //.pageBlock_ElementHolder .pageBlock_MediaHolder .pageBlock_ImageHolderInner,
+    //.pageBlock_ElementHolder .pageBlock_MediaHolder .pageBlock_VideoHolderInner,
+    .sideBar_ElementHolder {
+        padding: 0;
+        
+        img {
+            position: relative;
+        }
+
+        .sideBar_Caption {
+            @include sidebar-caption();
+
+            position: relative;
+            z-index: 10;
+        }
+
+        /* ======================================== */
+        /* Image
+        /* ======================================== */
+
+        &.sideBar_ImageElementHolder {
+            
+            img {
+                position: relative;
+            }
+            .title {
+                display: none;
+            }
+
+            .sideBar_ImageHolder {
+                overflow: hidden;
+                a img {
+                    -moz-transition: all 0.3s;
+                    -webkit-transition: all 0.3s;
+                    transition: all 0.3s;
+                }
+                &:hover a img {
+                    -moz-transform: scale(1.1);
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+            }
+
+        }
+
+        /* ======================================== */
+        /* Map
+        /* ======================================== */
+
+        &.sideBar_LocationElementHolder {
+
+            .title {
+                display: none;
+            }
+
+            #googleMapWrapper {
+                
+                img {
+                    max-width: auto !important;
+                }
+            }
+            .sideBar_GoogleMap {
+                height: 350px;
+            }
+            .sideBar_MapListAddress {
+                background: #6a8e55;
+                font-family: $bodyFont;
+                color: #fff;
+                font-size: 14px;
+                line-height: (22/14);
+                padding: 35px;
+                text-align: left;
+                @include box-shadow(none);
+                
+                a.button {
+                    width: 100%;
+                    @media all and (min-width: $screen-sm-min) {
+                        width: auto;
+                    }
+                }
+                
+                .sideBar_MapAddressElement {
+                    margin: 0;
+
+                    &.nameText {
+                        @extend %headingFontMedium;
+                        color: #fff;
+                        font-size: 23px;
+                        letter-spacing: -0.025;
+                        line-height: (30/23);
+                        text-transform: uppercase;
+                        margin-bottom: 18px;
+                        
+                        strong {
+                            font-weight: $headingMedium;
+                        }
+                    }
+                    
+                    strong {
+                        font-weight: normal;
+                    }
+
+                    &.directionsText {
+                        display: inline-block;
+                        position: relative;
+                        font-size: 28px;
+                        color: #c5a028 !important;
+                        line-height: 1;
+                        text-align: left;
+                        text-decoration: none !important;
+                        text-transform: lowercase;
+                        @include transition(none);
+                        margin-top: 10px;
+                        padding: 0;
+                        
+                        &:after {
+                            content: '\00a0\203a';
+                        }
+                        &:hover {
+                            color: #e8bc2f !important;
+                            @include transition(none);
+                        }
+                    }
+                    &.directionsText {
+                        margin: 18px 0 0;
+                    }
+
+                }
+
+            }
+
+            .infoWindow {
+                height: 125px;
+                line-height: normal;
+
+                .sideBar_MapAddressElement {
+                    font-family: $bodyFont;
+                    font-size: 12px;
+                    color: #171615;
+                    margin: 0;
+                    
+                    &.nameText {
+                        margin-bottom:8px;
+                    }
+                    &.phoneText,
+                    &.directionsText {
+                        margin-top:8px;
+                    }
+                }
+
+            }
+
+            @media (min-width: $screen-sm-min) {
+
+                .sideBar_MapListAddress {
+
+                    .sideBar_MapAddressElement {
+
+                        &.directionsText {
+                            display: block;
+                        }
+
+                        &.directionsButton {
+                            display: none;
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+    
+    /* ======================================== */
+    /* Pageblocks Styles and as Sidebar
+    /* ======================================== */
+    .pageBlock_Caption,
+    .pageBlock_VideoElementHolder .pageBlock_MediaHolder .pageBlock_Caption {
+        @include sidebar-caption();
+    }
+    
+    /* ======================================== */
+    /* Video (sidebar and pageblock)
+    /* ======================================== */
+    .sideBar_VideoElementHolder {
+
+        .title {
+            display: none;
+        }
+
+        .sideBar_VideoInner {
+            position: relative;
+
+            &:after {
+                content: '';
+                background: rgba(#171615, 0.65);
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top:0;
+                left:0;
+            }
+            .sideBar_PlayImage {
+                width: 75px;
+                height: 75px;
+                border-radius: 50%;
+                background: transparent;
+                border: 2px solid #ecac00;
+                display: block;
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                text-indent: 500%;
+                @include transform(translate(-50%, -50%));
+    
+                &:before {
+                    width: 100%;
+                    background: transparent;
+                    height: 100%;
+                    color: #ecac00;
+                    content: "";
+                    display: block;
+                    font-family: "FontAwesome", sans-serif;
+                    font-size: 30px;
+                    font-style: normal;
+                    line-height: 75px;
+                    padding-left: 3px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    text-align: center;
+                    text-indent: 0;
+                }
+            }
+        }
+    }
+    .pageBlock_ElementHolder {
+        
+        .sideBar_VideoInner {
+            position: relative;
+
+            &:after {
+                content: '';
+                background: none;
+            }
+        }
+    }
+    
+    /* ======================================== */
+    /* Content
+    /* ======================================== */
+    .region-sidebar section.block,
+    .sideBar_ContentElementHolder {
+        background: #ece6d7;
+        position:relative;
+        
+        &:after {
+            //border: solid 1px rgba(#cfb475, .5);
+            content: '';
+            display: block;
+            height: auto;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            bottom: 5px;
+            right: 5px;
+            visibility: visible;
+            z-index: -1;
+        }
+    }
+    .region-sidebar,
+    .sideBar_ContentElementHolder {
+
+        .title {
+            display: none;
+        }
+        .sideBar_ContentHolder {
+            background: transparent;
+            @include box-shadow(none);
+        }
+        
+        section.block,
+        .sideBar_ContentHolder {
+            color: #25221b;
+            font-size: 15px;
+            line-height: (22/15);
+            padding: 25px;
+            text-align: left;
+            font-family: $fancyFont;
+            
+            h1, h2, h3, h4, h5, h6 {
+                color: #25221b;
+                margin-top: 0;
+            }
+            h1, h2, h4, h5, h6 {
+                @extend %headingFontBold;
+                font-size: 20px;
+                line-height: (25/20);
+                margin: 0 0 8px;
+
+            }
+            h5 {
+                line-height: 25px;
+                margin-bottom: 20px;
+            }
+            p:last-child {
+                margin-bottom: 0;
+            }
+
+            .view-content {
+                margin: 0;
+            }
+            
+            /* categories block */
+            &#block-views-blog-categories-block {
+                h2:before {
+                    @extend %fontawesome;
+                    content: '';
+                    font-size: 12px;
+                    padding: 0 4px 0 0;
+                }
+            }
+            .view-blog-categories {
+                .views-row {
+                    font-size: 14px;
+                    line-height: (20/14);
+                    font-weight: bold;
+                    font-style: italic;
+                    padding: 7px 0;
+                    
+                    &:first-of-type {
+                        padding-top: 5px;
+                    }
+                    &:last-of-type {
+                        padding-bottom: 0;
+                    }
+                    
+                    a {
+                        color: $bodyTextColor;
+                        
+                        &:hover {
+                            color: $primaryLinkColor;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    .node-type-webform {
+        .region-sidebar,
+        .sideBar_ContentElementHolder {
+            section.block,
+            .sideBar_ContentHolder {
+                padding: 50px 43px;
+            }
+        }
+    }
+    
+    /* ======================================== */
+    /* Overlay
+    /* ======================================== */
+    div.pp_content_container {
+        div.pp_content {
+            overflow: visible !important;
+        }
+        p.pp_description {
+            @extend %headingFontMedium;
+            font-size: 19px;
+            line-height: (23/19);
+            min-height: 40px !important;
+        }
+        div.pp_details {
+            background: url('../images/backgrounds/bg-button.png') repeat #fff;
+            margin: 0 !important;
+            padding: 25px 20px !important;
+            min-height: 95px;
+
+            a.pp_close {
+                color: #fff;
+                background: red;
+                border: 1px #701d28 solid;
+                top: 27px;
+                right: 20px;
+                width: 48px;
+                height: 40px;
+                @include background-image(linear-gradient(#8a2432, #701d28));
+                @include box-shadow(0 0 3px rgba(#2b2517, 0.25));
+                @include transition(none);
+                
+                &:after {
+                    @extend %fontawesome;
+                    content: '';
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    text-indent: 0;
+                    width: 48px;
+                    height: 40px;
+                    font-size: 20px;
+                    line-height: 40px;
+                    text-align: center;
+                    z-index: 300;
+                }
+                
+                &:hover {
+                    background: url('../images/backgrounds/bg-button.png') repeat lighten(#8a2432, 5%);
+                    text-decoration: none;
+                    @include transition(none);
+                }
+            }
+        }
+    }
+    div.light_rounded .pp_top .pp_middle, div.light_rounded .pp_content_container .pp_left, div.light_rounded .pp_content_container .pp_right, div.light_rounded .pp_bottom .pp_middle, div.light_square .pp_left, div.light_square .pp_middle, div.light_square .pp_right, div.light_square .pp_content, div.facebook .pp_content {
+        background: transparent !important;
+    }
+    
+    #googleMapWrapper {
+        img {
+            max-width: inherit !important;
+        }
+    }
+    

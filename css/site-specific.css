@@ -1,0 +1,73 @@
+/* 
+    Created on : Jul 10, 2017
+    Author     : branyikv
+    Description: Site specific CSS
+*/
+
+/*
+    This class styles the text color of the Labels above the input fields
+*/
+.wine-finder-app .text-gray{
+    color: #000000;
+}
+
+/*
+    This class styles the text color of the text on the result page(s)
+*/
+.wine-finder-app .text-white{
+    color: #000000;
+}
+
+/*
+    These style the Search button
+*/
+.wine-finder-app .terlato-red-button{
+    background-color: #1F0606;
+    color: #FFFFFF;
+    border: 1px #ffffff;
+}
+
+.wine-finder-app .terlato-red-button::selection{
+    background-color: #1F0606;
+    color: #FFFFF;
+    border: 1px #ffffff;
+}
+
+.wine-finder-app .terlato-red-button:hover{
+    background-color: #1F0606;
+    color: #ffffff;
+    border: solid 1px #fff;
+}
+
+.wine-finder-app .terlato-red-button::visited{
+    background-color: #1F0606;
+    color: #FFB841;
+    border: 1px #ffffff;
+}
+
+/* 
+  Corrects Search button text color to change to a dark gray that makes
+  the text unreadable
+*/
+.row .terlato-red-button {
+    color: #ffffff !important;
+}
+
+/*
+    This style the Uncorked link
+*/
+a.uncorked-link:link {font-weight: bold;}
+a.uncorked-link:visited {font-weight: bold;}
+a.uncorked-link:hover {font-weight: bold; text-decoration: underline;}
+
+/* Remove input box on sweet alert message */
+.sweet-alert fieldset input[type="text"] {
+    display: none;
+}
+
+/*
+ * Set the uncorked URL
+ */
+.uncorked_URL {
+    padding-top: 25px;
+}

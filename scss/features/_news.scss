@@ -1,0 +1,174 @@
+
+    /**
+     * @file _news.scss
+     * @author Jimmy K. <jimmy@orbitmedia.com>
+     */
+
+    body.page-news {
+
+        h1.title {
+
+            @extend %titleIcon;
+
+            &:before {
+                content: "";
+            }
+
+        }
+
+    }
+    /* ======================================== */
+    /* View (Landing)
+    /* ======================================== */
+
+    .view-news {
+
+        .view-header {
+
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            color: #c2c2c2;
+            font-size: 12px;
+            font-style: italic;
+            line-height: normal;
+            padding: 10px 2px;
+
+            &:before {
+                content: "";
+                font-family: "FontAwesome", sans-serif;
+                font-style: normal;
+                margin-right: 3px;
+            }
+
+        }
+
+    }
+
+    /* ======================================== */
+    /* Landing
+    /* ======================================== */
+
+    .newsLandingItem {
+
+        border-bottom: 1px solid #000;
+        padding: 15px 0;
+
+        /* Title */
+
+        .title {
+            font-size: 30px;
+            line-height: 45px;
+            margin: 0;
+
+            a {
+
+                @extend %appendSingleArrow;
+
+                &:after {
+                    position: relative;
+                    top: -2px;
+                }
+
+                &:hover {
+                    color: #2681c0;
+                    text-decoration: none;
+                }
+
+            }
+
+        }
+
+        /* Meta */
+
+        .meta {
+
+            color: #a5a5a5;
+            font-size: 13px;
+            margin-bottom: 5px;
+
+            .pipe {
+                padding: 0 8px;
+            }
+
+            .terms {
+
+                a {
+                    color: #a5a5a5;
+                }
+
+                &:before {
+                    content: "";
+                    font-family: "FontAwesome", sans-serif;
+                    margin-right: 5px;
+                    position: relative;
+                    top: 1px;
+                }
+
+            }
+
+        }
+
+        /* Body */
+
+        .field-content {
+            font-size: 13px;
+            line-height: 24px;
+        }
+
+        /* External Link */
+
+        &.external .title a:after {
+            content: "\00a0";
+            font-family: "FontAwesome", sans-serif;
+            font-size: 20px;
+            top: 0;
+        }
+
+        /* Download */
+
+        &.download .title a:after {
+            content: "\00a0";
+            font-family: "FontAwesome", sans-serif;
+            font-size: 22px;
+            top: 0;
+        }
+
+    }
+
+    /* ======================================== */
+    /* Detail
+    /* ======================================== */
+
+    .node-article {
+
+        #articleMeta {
+
+            border-bottom: 1px solid #000;
+            color: #a5a5a5;
+            font-size: 13px;
+            margin: -5px 0 25px;
+            padding-bottom: 20px;
+
+            .pipe {
+                padding: 0 8px;
+            }
+
+            .terms {
+
+                a {
+                    color: #a5a5a5;
+                }
+
+                &:before {
+                    content: "";
+                    font-family: "FontAwesome", sans-serif;
+                    margin-right: 5px;
+                    position: relative;
+                    top: 1px;
+                }
+
+            }
+
+        }
+
+    }

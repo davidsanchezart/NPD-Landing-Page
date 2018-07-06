@@ -1,0 +1,329 @@
+
+    /**
+     * Global styles for product catalog (listing) pages
+     * @file _product-catalog.scss
+     * @author Jessica L. <jessica@orbitmedia.com>
+    */
+
+    #contentBottom section#block-views-product-listing-block {
+        border: none;
+        margin: 0;
+        padding-top: 0;
+    
+        &:before {
+            display: none;
+        }
+    }
+
+    /* ======================================== */
+    /* Filters
+    /* ======================================== */
+
+    div.view-product-facets.view > .view-filters {
+
+        @media all and (max-width: $screen-xs-max) {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .views-exposed-widget {
+             @include make-row();
+        }
+
+        label {
+            @include make-sm-column(12);
+            @include make-md-column(4);
+            @include make-lg-column(3);
+            margin: 0 0 10px;
+
+            @media all and (min-width: $screen-sm-min) {
+                margin-top: 14px;
+            }
+
+            /* only small */
+            @media all and (min-width: $screen-sm-min) {
+                width: 215px;
+            }
+
+            /* only med. */
+            @media all and (min-width: $screen-md-min) {
+                margin-bottom: 0;
+            }
+        }
+
+        .views-exposed-widgets {
+            @include make-row();
+            width: auto;
+        }
+        .views-exposed-widget {
+            @include make-sm-column(4);
+            margin: 10px 0;
+
+            &:last-of-type {
+                margin: 0;
+            }
+
+            @media all and (min-width: $screen-sm-min) {
+                margin: 0;
+            }
+
+            label {
+                display: none;
+            }
+
+            select {
+                width: 100%;
+            }
+
+            > div.views-widget {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+        }
+
+        .filterHeader-Left h5 {
+            margin: 0;
+        }
+
+    }
+
+    /* ======================================== */
+    /* Sortings and Count
+    /* ======================================== */
+
+    .view-product-facets .view-header {
+        margin: 25px 0 0;
+
+        @media all and (min-width: $screen-sm-min) {
+            margin-top: 45px;
+        }
+    }
+
+    .sortingHolder {
+        @include make-sm-column(6);
+
+        label {
+            font-size: 14px;
+            line-height: 27px;
+            font-style: italic;
+            font-weight: bold;
+            margin: 0;
+        }
+    }
+    select#combinedSort {
+        display: inline;
+        background: transparent;
+        border: none;
+        font-size: 15px;
+        color: #000;
+        width: auto;
+        height: auto;
+        padding: 0 15px;
+        @include box-shadow(none);
+    }
+    .resultsCount {
+        @include make-sm-column(6);
+        @extend %headingFontSemiBold;
+        color: #000;
+        font-size: 19px;
+        line-height: (26/19);
+        margin: 15px 0 0;
+        padding-top: 2px;
+
+        @media all and (min-width: $screen-sm-min) {
+            text-align: right;
+            margin: 0;
+        }
+    }
+
+    .view-header hr {
+        margin: 20px 0 0;
+    }
+
+    .views-widget-sort-by,
+    .views-widget-sort-order,
+    .views-submit-button {
+        display: none;
+    }
+
+    /* ======================================== */
+    /* view-content
+    /* ======================================== */
+    .view-product-facets .view-content {
+        @include make-row();
+        @include clearfix();
+        padding: 30px 0 $listingPadding;
+        margin: 0;
+        position: relative;
+
+        &:before {
+            content: "";
+            bottom:0;
+            left:0;
+            width: 100%;
+            height: 65px;
+            position: absolute;
+        }
+    }
+
+    /* ======================================== */
+    /* Pager
+    /* ======================================== */
+
+    .view-product-facets .pager-load-more {
+        border: none;
+        margin: 0;
+        &:before {
+            display: none;
+        }
+        
+        li {
+            list-style: none;
+            text-align: center;
+        }
+        
+        a {
+            margin: 0;
+        }
+    }
+    
+    /* ======================================== */
+    /* Ship To Popup
+    /* ======================================== */
+    
+    #shipToPopup {
+        display: none;
+        background: url("../images/backgrounds/bg-form.jpg") repeat;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 110;
+        width: 96%;
+        margin: 0 auto;
+        @include box-shadow(0 0 3px rgba(66, 65, 60, 0.2));
+        @include translate(-50%,-50%);
+        
+        @media all and (min-width: $screen-sm-min) {
+            width: 650px;
+        }
+    }
+    
+    #shipToTitle,
+    #shipToContent {
+        padding: 20px;
+    }
+
+    /* Shipping To Title */
+    #shipToTitle {
+        position: relative;
+
+        a#overlay-close {
+            @extend %button;
+            width: 48px;
+            height: 40px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            margin: -20px 0 0;
+
+            &:after {
+                @extend %fontawesome;
+                content: '';
+                color: #fff;
+                font-weight: normal;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin: -10px 0 0 -7px;
+            }
+            &:before {
+                display: none;
+            }
+        }
+    }
+    
+    /* Shipping To Content */
+    #shipToContent {
+        text-align: center;
+        
+        > .row > div {
+            width: 100%;
+            
+            @media all and (min-width: $screen-sm-min) {
+                width: 45%;
+            }
+        }
+        
+        > .row > div.orCol {
+            font-weight: bold;
+            padding: 0;
+            font-size: 14px;
+            line-height: 44px;
+            width: 100%;
+            
+            @media all and (min-width: $screen-sm-min) {
+                width: 10%;
+            }
+        }
+
+        .pickupCol .button {
+            padding: 13px 20px;
+            width: 100%;
+        }
+        .disclaimerCol {
+            border-top: 1px solid #e0d7c1;
+            padding: 20px 0 0;
+            margin: 30px 0 0;
+            text-align: left;
+            font-size: 14px;
+            
+            p {
+                margin: 0;
+            }
+        }
+        
+        .view-footer .button {
+            margin: 20px 0 0;
+            padding: 13px 30px;
+        }
+        &.state-All .view-footer .button {
+            display: none;
+        }
+        
+        .view .view-filters .views-widget {
+            margin: 0;
+        }
+        
+        .view-shipping-estimate-form .view-filters label {
+            display: none;
+        }
+    }
+    
+    /* states dropdown / continue btn */
+    .view-display-id-ship_to_states {
+        .view-filters div.views-widget {
+            width: 100%;
+        }
+        .view-content {
+            display: none;
+        }
+        .view-footer {
+            text-align: center;
+        }
+    }
+    
+    /* overlay */    
+    #terlatoOverlay {
+        background-color: #000;
+        display: none;
+        height: 100%;
+        left: 0;
+        opacity: 0.9;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+    }

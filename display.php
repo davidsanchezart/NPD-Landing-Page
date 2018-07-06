@@ -1,0 +1,1 @@
+<?php require_once ('../../sourceFiles/viewfile.php'); ?>

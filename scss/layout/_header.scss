@@ -1,0 +1,473 @@
+
+    /**
+     * @file _header.scss
+     * @author Jessica
+     */
+
+    /* Extra small devices (phones, less than 768px) */
+    /* No media query since this is the default in Bootstrap */
+
+
+    /* ======================================== */
+    /* All Header
+    /* ======================================== */
+    header#header {
+    }
+
+    /* ======================================== */
+    /* Ecommerce
+    /* ======================================== */
+
+    /* Cart Total Summary */
+    #summaryInHeader {
+        display: block;
+
+        a {
+            @extend %button;
+            width: 100%;
+            font-style: normal;
+            text-align: center;
+
+            @media all and (min-width: $screen-sm-min) {
+                background: none;
+                border: none;
+                font-size: inherit;
+                font-family: inherit;
+                color: #cfb475 !important;
+                padding: inherit;
+                width: auto;
+                text-align: left;
+
+                &:before {
+                    display: none;
+                }
+
+                &:hover {
+                    background: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    #summaryInToggle {
+        display: none;
+    }
+    #summaryInCart {
+        display: none;
+    }
+    #shoppingHeaderToggleBar {
+        @extend .hidden-sm, .hidden-md, .hidden-lg;
+        background: url("../images/backgrounds/bg-headerFooter.jpg") repeat rgba(#000, 0.2);
+        border: solid 2px #000;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1;
+        color: #cfb475;
+        padding-top: 20px;
+        padding-bottom: 15px;
+
+        .row > div {
+            @include make-xs-column(6);
+        }
+        a {
+            color: #cfb475;
+            cursor: pointer;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+        i.fa {
+            padding: 0 5px;
+        }
+        .cartQtyLinks {
+            display: none;
+        }
+        #summaryInToggle {
+            display: block;
+            text-align: right;
+            text-transform: capitalize;
+        }
+    }
+
+    #memberMsgTopHeader {
+        @extend .hidden-xs;
+        background:url(../images/backgrounds/bg-headerFooter.jpg) 0 0 repeat rgba(#000, 0.2);
+        border-bottom: 3px #121212 solid;
+        color: #b2ab98;
+        /* font-family: georgia, garamond, serif; */
+        font-size: 14px;
+        font-weight: bold;
+        line-height: (20/14);
+
+        .container-fluid {
+            padding-top: 50px;
+            padding-bottom: 20px;
+            position: relative;
+
+            button {
+                position: absolute;
+                top: 0;
+                right: 20px;
+
+                @media all and (min-width: $screen-md-min) {
+                    right: 15px;
+                }
+            }
+        }
+    }
+
+    #shoppingHeaderWrapper {
+        @media all and (max-width: $screen-xs-max) {
+            position: relative;
+            width: 100%;
+            z-index: 10;
+            top: 0;
+        }
+    }
+    #shoppingHeader {
+        background: url("../images/backgrounds/bg-headerFooter.jpg") repeat rgba(#000, 0.2);
+        border: solid 2px #000;
+        color: #cfc2a5;
+        /* font-family: georgia, garamond, serif; */
+        font-size: 16px;
+        font-weight: bold;
+        line-height: (20/14);
+        padding: 20px 0;
+        position: relative;
+        text-transform: capitalize;
+
+        @media all and (min-width: $screen-sm-min) {
+            text-align: right;
+            font-size: 12px;
+            line-height: 1;
+            padding: 3px 0;
+            display: block;
+            height: auto !important;
+        }
+
+        button.shoppingHeaderClose {
+            @extend .hidden-sm, .hidden-md, .hidden-lg;
+            position: absolute;
+            font-size: 20px;
+            top: 0;
+            right: 0;
+            width: 48px;
+            padding: 9px 0 8px 4px;
+            @include background-image(linear-gradient(#8a2432, #701d28));
+
+            &:before {
+                display: none;
+            }
+            &:hover {
+                color: $primaryRolloverColor;
+            }
+        }
+
+        a {
+            color: #cfb475;
+
+            &:hover {
+                color: #fff !important;
+            }
+        }
+
+        .fa {
+            margin: 0 4px 0 0;
+        }
+
+        .line-item-summary {
+            letter-spacing: 0.025em;
+            margin: 0;
+
+            .line-item-total-raw {
+                font-weight: normal;
+
+            }
+            .line-item-quantity {
+                float: none;
+            }
+        }
+
+        .container-fluid > div {
+            padding: 9px 0;
+            vertical-align: middle;
+
+            a {
+                margin-right: 15px;
+                @media all and (min-width: $screen-sm-min) {
+                    margin-right: 0;
+                }
+            }
+
+            @media all and (min-width: $screen-sm-min) {
+                border-right: 1px #000 solid;
+                display: inline-block;
+                padding: 17px 15px 14px;
+            }
+
+            @media all and (min-width: $screen-md-min) {
+                padding: 10px 15px 8px;
+            }
+
+            &.region-shopping-info,
+            &.welcomeMember {
+                display: block;
+                @media all and (min-width: $screen-sm-min) {
+                    display: inline-block;
+                }
+            }
+        }
+
+        .region-shopping-info {
+            margin: 7px 0 0;
+
+            @media all and (min-width: $screen-sm-min) {
+                margin: 0;
+            }
+        }
+
+        .welcomeMember {
+            font-style: italic;
+        }
+
+        div.memberMsgHeaderLink {
+            @extend .hidden-xs;
+        }
+        div.memberMsgHeader {
+            padding-top: 0;
+
+            @media all and (min-width: $screen-sm-min) {
+                display: none;
+            }
+        }
+    }
+
+
+
+    /* ======================================== */
+    /* Top
+    /* ======================================== */
+
+    #topWrapper {
+        background: #fff;
+
+        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            > .container-fluid {
+                padding-left: 25px;
+                padding-right: 25px;
+
+                > .row {
+                    margin-left: -25px;
+                    margin-right: -25px;
+
+                    > div.navbar-header {
+                        padding-left: 25px;
+                        padding-right: 25px;
+                    }
+                }
+            }
+        }
+        .navbar-header {
+            @include make-md-column(3);
+            padding: 20px 0 0;
+            border-bottom: 1px solid #e5e5e5;
+
+            @media all and (min-width: $screen-md-min) {
+                padding-left: 15px;
+                padding-top: 26px;
+                padding-bottom: 27px;
+                border-bottom-width: 0;
+            }
+        }
+        .navbar-header-right {
+            @include make-md-column(9);
+            @include make-lg-column(8);
+            @include make-lg-column-offset(1);
+            padding: 0;
+            z-index: 10;
+
+            @media all and (min-width: $screen-md-min) {
+                padding: 0 15px;
+            }
+        }
+
+
+        /* ======================================== */
+        /* Header Hours
+        /* ======================================== */
+        .headerHours {
+            @extend .hidden-xs;
+            @extend .hidden-sm;
+            color: #b59855;
+            font-size: 16px;
+            line-height: 1;
+            font-style: italic;
+            font-weight: bold;
+            text-align: right;
+            text-transform: capitalize;
+            padding: 20px 0;
+        }
+
+        /* ======================================== */
+        /* Logo
+        /* ======================================== */
+
+        .logo {
+            margin: 15px 10px 30px;
+            width: 50%;
+
+            @media all and (min-width: $screen-md-min) {
+                margin: 0;
+                width: 100%;
+            }
+            img {
+                width: 100%;
+                height: auto;
+
+                @media all and (max-width: $screen-xs-max) {
+                    max-width: 250px;
+                }
+
+                @media all and (min-width: $screen-sm-min) {
+                    width: 260px;
+                }
+                @media all and (min-width: $screen-md-min) {
+                    max-width: 166px;
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+
+    /* ======================================== */
+    /* Banners
+    /* ======================================== */
+
+    #headerImage {
+        position: relative;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        #clublevelMessage {
+            @extend %headingFontMedium;
+            background: #030200;
+            color: #fff;
+            font-size: 20px;
+            line-height: (30/20);
+            padding: 18px 0 12px;
+            text-align: center;
+            display: none;
+
+            @media all and (min-width: $screen-md-min) {
+                font-size: 25px;
+                line-height: (30/25);
+            }
+
+            body.product-catalog & {
+                display: block;
+            }
+
+            b, strong {
+                font-weight: $headingBold;
+            }
+            p {
+                margin: 0;
+            }
+            .small-print {
+                font-family: $bodyFont;
+                font-style: italic;
+                font-weight: normal;
+            }
+        }
+
+        &.hasImage {
+
+            @media all and (min-width: $screen-sm-min) {
+                #clublevelMessage {
+                    background: rgba(#030200, 0.85);
+                    bottom: 0;
+                    position: absolute;
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+
+
+    // Background-image-driven slides and header image
+
+    .slide-image-wrapper {
+        .slide-image {
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+        }
+
+        @media screen and (max-width: 1399px) {
+            position: relative;
+            &:before {
+                display: block;
+                content: "";
+                width: 100%;
+                padding-top: (800 / 1920) * 100%;
+            }
+            .slide-image {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-size: cover;
+            }
+        }
+
+        @media screen and (min-width: 1400px) {
+            .slide-image {
+                width: 100%;
+                height: 600px;
+                background-size: cover;
+            }
+        }
+    }
+
+    .header-image-wrapper {
+        .header-image {
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        @media screen and (max-width: 1399px) {
+            position: relative;
+            &:before {
+                display: block;
+                content: "";
+                width: 100%;
+                padding-top: (450 / 1500) * 100%;
+            }
+            .header-image {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-size: cover;
+            }
+        }
+
+        @media screen and (min-width: 1400px) {
+            .header-image {
+                width: 100%;
+                height: 450px;
+            }
+        }
+        @media screen and (min-width: 1500px) {
+            .header-image {
+                background-size: cover;
+            }
+        }
+    }

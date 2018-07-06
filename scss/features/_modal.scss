@@ -1,0 +1,66 @@
+/**
+* Shared styles for all Bootstrap Modals
+*/
+
+// Overlay
+.modal-backdrop,
+.modal-backdrop.in {
+    background: #000;
+    opacity: 0.85;
+}
+
+// Modal window
+.modal-dialog {
+    text-align: center;
+    min-width: inherit;
+    padding: 0 0.5em 1em;
+    margin-top: 35px;
+    
+    @media all and (min-width: $screen-sm-min) {
+        width: 750px;
+    }
+}
+
+// Modal content
+.modal-content {
+    border-radius: 0;
+    @extend %highlight;
+    padding: 15px;
+    @media all and (min-width: $screen-sm-min) {
+        padding: 45px;
+    }
+}
+
+.modal-header {
+    padding: 0 0 45px;
+    border-width: 0;
+    
+    h1 {
+        margin: 0;
+
+        @media all and (min-width: $screen-sm-min) {
+            padding: 36px 20px 0;
+            font-size: 40px;
+            line-height: (50/40);
+        }
+    }
+}
+
+.modal-body {
+    padding: 20px 5px 10px;
+    border-top: 1px solid #c5c5c5;
+    font-family: $fancyFont;
+    font-size: 24px;
+    line-height: (35/24);
+
+    p {
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.modal-footer {
+    border-width: 0;
+    margin-top: 0;
+}

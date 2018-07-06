@@ -1,0 +1,451 @@
+
+    /**
+     * @file _tables.scss
+     * @author Jimmy K. <jimmy@orbitmedia.com>
+     */
+
+    /* ======================================== */
+    /* Pricing Table
+    /* ======================================== */
+
+    .pageBlock_PricingTableElementHolder {
+
+        @include background-image(linear-gradient(#6e913b, #8cab3e));
+        border-top: none;
+        overflow: hidden;
+        padding: 20px 0;
+        position: relative;
+
+        @media (min-width: $screen-sm-min) {
+            background-image: none;
+            padding: 30px 0 50px;
+        }
+
+        /* Bootstrap */
+
+        .row {
+            margin-left: -1px;
+            margin-right: -1px;
+            position: relative;
+        }
+
+        .col {
+
+            padding-left: 1px;
+            padding-right: 1px;
+
+            + .col {
+
+                margin-top: 20px;
+
+                @media (min-width: $screen-sm-min) {
+                    margin-top: 0;
+                }
+
+            }
+
+        }
+
+        /* Background Image */
+
+        .backgroundImageWrapper {
+
+            display: none;
+            margin-left: -750px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+
+            @media (min-width: $screen-sm-min) {
+                display: block;
+            }
+
+            img {
+                min-width: 100%;
+                height: auto;
+            }
+
+        }
+
+        /* Intro */
+
+        .intro {
+
+            margin-bottom: 40px;
+
+            h1, h2, h3, h4, h5, h6 {
+                color: #fff;
+            }
+
+            p {
+                color: #e5e5e5;
+            }
+
+        }
+
+        /* Columns */
+
+        .pricingTableCol {
+
+            background: #f1f1f1;
+            position: relative;
+            text-align: center;
+
+            /* Plan */
+
+            .plan {
+                background: #8bb425;
+                border-top: 1px solid #9fc337;
+                border-bottom: 1px solid #b4de4b;
+                color: #405310;
+                font-size: 20px;
+                padding: 15px 20px;
+                text-transform: uppercase;
+            }
+
+            /* Price */
+
+            .price {
+                background: #a7d23a;
+                border-top: 1px solid #98c130;
+                border-bottom: 1px solid #b4de4b;
+                color: #fff;
+                font-size: 30px;
+                padding: 15px 20px;
+            }
+
+            /* Rows */
+
+            .rows {
+
+                background: #a7d23a;
+
+                .normal {
+
+                    border-top: 1px solid #98c130;
+                    border-bottom: 1px solid #b4de4b;
+                    color: #567801;
+                    font-size: 12px;
+                    line-height: 19px;
+                    padding: 15px 20px;
+
+                    p:last-of-type {
+                        margin: 0;
+                    }
+
+                    &:last-of-type {
+
+                        padding-bottom: 40px;
+
+                        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+                            padding-bottom: 20px;
+                        }
+
+                    }
+                }
+
+            }
+
+            /* Button */
+
+            .buttonWrapper {
+
+                width: 100%;
+                margin: -25px 0;
+                padding: 0 20px;
+                position: absolute;
+                top: auto;
+                left: 0;
+
+                .button {
+                    width: 100%;
+                    display: block;
+                }
+
+                @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+                    background: #a7d23a;
+                    border-top: 1px solid #98c130;
+                    border-bottom: 1px solid #b4de4b;
+                    margin: 0;
+                    padding: 20px;
+                    position: static;
+                }
+
+            }
+
+            /* Features */
+
+            .features {
+
+                border: 1px solid #e7e7e7;
+                border-top: none;
+                border-bottom: none;
+
+                .feature {
+
+                    border-top: 1px solid #f7f7f7;
+                    border-bottom: 1px solid #e7e7e7;
+                    color: #666973;
+                    font-size: 12px;
+                    line-height: 19px;
+                    padding: 10px 20px;
+
+                    p:last-of-type {
+                        margin: 0;
+                    }
+
+                    &:first-of-type {
+
+                        padding-top: 40px;
+
+                        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+                            padding-top: 20px;
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    /* ======================================== */
+    /* Comparison Charts
+    /* ======================================== */
+
+    body.node-type-comparison-chart {
+
+        h1.title {
+            text-align: center;
+        }
+
+        /* Intro */
+
+        .intro {
+
+            padding-left: 15px;
+            padding-right: 15px;
+
+            @media (min-width: $screen-sm-min) {
+                padding-left: 100px;
+                padding-right: 100px;
+            }
+
+        }
+
+        /* Tooltip */
+
+        #comparisonChartTooltip {
+
+            width: 300px;
+            background: #f1f1f1;
+            border: 1px solid #d9d9d9;
+            @include box-shadow(0 1px 1px rgba(#000, 0.1));
+            padding: 5px;
+            position: relative;
+
+            .inner {
+                background: #fff;
+                font-size: 13px;
+                line-height: 20px;
+                padding: 15px 20px;
+            }
+
+            .arrow {
+                width: 50px;
+                height: 12px;
+                background: url('../images/arrow-down.png') top left no-repeat;
+                margin-left: -25px;
+                position: absolute;
+                bottom: -12px;
+                left: 50%;
+            }
+
+        }
+
+        /* Chart */
+
+        #comparisonChartWrapper {
+
+            padding: 20px 0 50px;
+
+            .row {
+                margin-left: -1px;
+                margin-right: -1px;
+            }
+
+            .col {
+                padding-left: 1px;
+                padding-right: 1px;
+            }
+
+            .comparisonChartKeysWrapper {
+                padding: 0;
+            }
+
+            .comparisonChartValuesWrapper {
+                padding: 0;
+            }
+
+            /* Mobile Rows */
+
+            .comparisonChartMobileRow {
+
+                +.comparisonChartMobileRow {
+
+                    margin-top: 20px;
+
+                    @media (min-width: $screen-md-min) {
+                        margin-top: 0;
+                    }
+
+                }
+
+            }
+
+            /* Columns */
+
+            .comparisonChartCol {
+
+                p {
+                    margin: 0;
+                }
+
+                /* Header */
+
+                .header {
+                    color: #3c5400;
+                    font-size: 20px;
+                    line-height: normal;
+                    padding: 15px 20px;
+                    text-transform: uppercase;
+                }
+
+                /* Price */
+
+                .price {
+                    color: #666973;
+                    font-size: 24px;
+                    line-height: normal;
+                    padding: 15px 20px;
+                }
+
+                /* Normal */
+
+                .normal {
+                    color: #666973;
+                    font-size: 12px;
+                    line-height: normal;
+                    padding: 10px 20px;
+                }
+
+                /* Subheader */
+
+                .subheader {
+                    font-size: 20px;
+                    line-height: normal;
+                    padding: 50px 20px 10px;
+                    text-transform: uppercase;
+                }
+
+                /* Keys */
+
+                &.comparisonChartKey {
+
+                    .comparisonChartRow {
+
+                        position: relative;
+
+                        &.header {
+                            border-top: 1px solid transparent;
+                            border-bottom: 1px solid #e7e7e7;
+                        }
+
+                        &.normal,
+                        &.price,
+                        &.subheader {
+                            background: #f1f1f1;
+                            border-top: 1px solid #f7f7f7;
+                            border-bottom: 1px solid #e7e7e7;
+                            border-left: 1px solid #dddddd;
+                        }
+
+                        &.normal {
+                            padding: 10px 35px 10px 20px;
+                        }
+
+                    }
+
+                    /* Tooltip */
+
+                    .tooltipIcon {
+
+                        color: #b5b6bc;
+                        cursor: pointer;
+                        font-size: 14px;
+                        position: absolute;
+                        top: 9px;
+                        right: 15px;
+                        @include transition(color 0.3s ease);
+
+                        &:before {
+                            content: "";
+                            font-family: "FontAwesome", sans-serif;
+                        }
+
+                        &.active,
+                        &:hover {
+                            color: #4ca7e6;
+                        }
+
+                    }
+
+                }
+
+                /* Values */
+
+                &.comparisonChartValue {
+
+                    background: #a7d23a;
+                    text-align: center;
+
+                    .comparisonChartRow {
+
+                        border-top: 1px solid #b4de4b;
+                        border-bottom: 1px solid #98c130;
+
+                        &.header {
+                            background: #8bb425;
+                            border-top: 1px solid #b5d959;
+                            border-bottom: 1px solid #b4de4b;
+                        }
+
+                        &.price {
+                            border-top: 1px solid #98c130;
+                            border-bottom: 1px solid #98c130;
+                            color: #fff;
+                        }
+
+                        &.normal {
+
+                            color: #3c5400;
+
+                            .check:before {
+                                content: "";
+                                font-family: "FontAwesome", sans-serif;
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }

@@ -1,0 +1,435 @@
+
+    /**
+     * Styles for detail and landing
+     * @file _events.scss
+     * @author Jessica L. <jessica@orbitmedia.com>
+     */
+     
+    /* ======================================== */
+    /* Detail
+    /* ======================================== */
+    #eventMain .field-type-taxonomy-term-reference {
+        font-size: 14px;
+        font-weight: bold;
+        font-style: italic;
+        line-height: (20/14);
+        margin: 0 0 11px;
+        
+        .field-items:before {
+            @extend %fontawesome;
+            content: '';
+            font-size: 11px;
+            padding-right: 7px;
+        }
+        .field-item {
+            display: inline-block;
+            padding: 0 2px;
+            
+            &:after {
+                content: '\00b7';
+                padding: 0 5px 0 10px;
+            }
+            
+            &:last-of-type:after {
+                display: none;
+            }
+        }
+    }
+    
+    /* ======================================== */
+    /* Landing
+    /* ======================================== */
+    .view-upcoming-ongoing-events-page {
+    
+        margin: 30px 0 $listingPadding;
+        
+        /* view filters */
+        .view-filters {
+            margin: 0 0 $listingPadding;
+            
+            .filters-reset-holder {
+                font-size: 14px;
+                line-height: 1;
+
+                a {
+                    margin: 25px 0 0;
+                    display: block;
+                }
+                
+                @media all and (min-width: $screen-lg-min) {
+                    //float: right;
+                    //margin: -29px 0 0;
+                    
+                    a {
+                        margin: 0;
+                    }
+                }
+            }
+            
+            #edit-date-wrapper {
+                display: none;
+                margin-top: 20px;
+                
+                input[type=text] {
+                    width: 100%;
+                }
+                
+                .container-inline-date .date-padding,
+                .container-inline-date .form-item {
+                    float: none;
+                    display: block;
+                }
+            }
+        }
+        
+        /* date group title */
+        h3 {
+            border-top: solid 1px #fffdf5;
+            @extend %headingFontMedium;
+            font-size: 26px;
+            font-variant: normal;
+            color: #33312f;
+            line-height: (32/26);
+            padding: 55px 0 32px;
+            position: relative;
+            margin: 25px 0 0;
+            
+            &:before {
+                content: '';
+                border-top: solid 1px #e6dbb8;
+                position: absolute;
+                top: -2px;
+                width: 100%;
+            }
+            
+            &:first-of-type {
+                border: none;
+                padding-top: 0;
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    
+        /* each event item */
+        .event-row {
+            @include make-row();
+            padding: 0 0 32px;
+            
+            .views-field-field-event-listing-image {
+                @include make-sm-column(2);
+                @extend .hidden-xs;
+                padding-top: 4px;
+                padding-right: 5px;
+                
+                @media all and (min-width: $screen-lg-min) {
+                    width: 12%;
+                }
+                
+                img {
+                    @include box-shadow(0 0 3px rgba(66,65,60,.2));
+                    height: auto;
+                    width: 100%;
+                }
+            }
+            .postContent {
+                @include make-sm-column(10);
+                
+                @media all and (min-width: $screen-lg-min) {
+                    width: 88%;
+                }
+            }
+        }
+        .event-row.featured-event-row {
+            padding: 20px 0 0;
+        }
+        
+        /* ======================================== */
+        /* Post Content
+        /* ======================================== */
+        
+        /* title */
+        .views-field-title {
+            @extend %headingFontMedium;
+            font-size: 32px;
+            line-height: (36/32);
+            margin: 0 0 4px;
+            
+            a {
+                @extend %appendSingleArrow;
+            }
+        }
+        .featured-event-row .views-field-title {
+            font-size: 22px;
+            font-weight: $headingBold;
+            line-height: (28/22);
+        }
+        
+        /* tags */
+        .views-field-term-node-tid {
+            font-size: 13px;
+            font-weight: bold;
+            line-height: (20/13);
+            margin: 0 0 4px;
+            
+            &:before {
+                @extend %fontawesome;
+                content: '';
+                font-size: 11px;
+                padding-right: 7px;
+            }
+            
+            > .field-content span {
+                padding: 0 7px;
+            }
+        }
+        
+        /* summary */
+        .views-field-field-event-summary {
+            margin: 11px 0 0;
+            
+            p {
+                margin: 0;
+            }
+        }
+    }
+    
+    /* ======================================== */
+    /* Featured
+    /* ======================================== */
+    .page-events #right section.block-views,
+    .page-upcoming-events #right section.block-views {
+        @extend %highlight;
+        margin: 30px 0 ($listingPadding + 27);
+        position: relative;
+        
+        &:after {
+            position: absolute;
+            bottom: -57px;
+            z-index: 1001;
+            left: 0;
+            display: block;
+            content: '';
+            width: 100%;
+            height: 2px;
+            border-top: solid 1px #e6dbb8;
+            border-bottom: solid 1px #fffdf5;
+            visibility: visible;
+        }
+        
+        .view-display-id-featured_events {
+            margin: 0;
+        }
+        
+        h2.block-title {
+            @extend %highlightShadow;
+            font-weight: $headingSemiBold;
+            font-size: 19px;
+            line-height: 1;
+            margin: -20px -25px 0;
+            padding: 17px 25px 15px;
+        }
+         /* each event item */
+        .event-row {
+            
+            .views-field-field-event-listing-image {
+                @include make-sm-column(6);
+                @extend .hidden-xs;
+                float: right !important;
+                padding-top: 4px;
+                padding-right: 15px;
+                
+                img {
+                    @include box-shadow(0 0 3px rgba(66,65,60,.2));
+                    height: auto;
+                    width: 100%;
+                }
+            }
+            .postContent {
+                @include make-sm-column(6);
+            }
+        }
+    }
+    
+    
+    /* ======================================== */
+    /* Mini Calendar
+    /* ======================================== */
+    
+    button#showCalendarLink {
+        @extend .hidden-lg;
+        @extend .hidden-md;
+        @extend .hidden-sm;
+        width: 100%;
+        margin: 20px 0 0;
+        
+        i {
+            margin-right: 10px;
+        }
+    }
+    
+    body.page-events #sidebar,
+    body.page-upcoming-events #sidebar,
+    body.page-events-by-day #sidebar {
+        position: static !important;
+        
+        .sideBar_ElementHolder,
+        .region-sidebar section.block {
+            margin: 20px 0 0;
+        }
+    }
+    body #sidebar,
+    body #right {
+
+        section#block-events-calendar-events-datepicker {
+            @extend .hidden-xs;
+            background: rgba(#cfb475, 0.05);
+            border:none;
+            padding: 0;
+            margin: 0;
+            
+            &:before,
+            &:after {
+                border:none;
+            }
+            .views-exposed-widgets {
+                margin: 0;
+            }
+            
+            &.mobilenessCalendar {
+                display: block !important;
+                position: absolute;
+                background: url('../images/backgrounds/bg-body.jpg') repeat;
+                left: 5%;
+                width: 90%;
+                z-index: 89999991;
+            }
+        }
+        #block-events-calendar-events-datepicker .views-exposed-widget {
+            margin: 0;
+        }
+        
+        /* header */
+        .ui-widget-content {
+            background: transparent !important;
+            @include box-shadow(INSET 0 0 20px rgba(#917c4a, 0.1));
+        }
+        .ui-datepicker .ui-datepicker-header {
+            height: 60px;
+            line-height: 60px;
+            border: none !important;
+            background: transparent !important;
+            @include box-shadow(inset 0px -5px 10px rgba(130,113,74,0.2));
+        }
+        
+        .ui-datepicker .ui-widget-header .ui-datepicker-prev,
+        .ui-datepicker .ui-widget-header .ui-datepicker-next {
+            height: 60px;
+            line-height: 60px;
+            
+            &:after {
+                @extend %fontawesome;
+                font-size: 35px;
+                font-weight: normal;
+                padding: 0;
+            }
+        }
+        .ui-datepicker .ui-widget-header .ui-datepicker-prev {
+            left: 5px;
+            
+            &:after {
+                content: '\f104';
+            }
+        }
+        .ui-datepicker .ui-widget-header .ui-datepicker-next {
+            right: 5px;
+
+            &:after {
+                content: '\f105';
+            }
+        }
+        .ui-datepicker .ui-datepicker-title {
+            @extend %headingFontMedium;
+            color: #1e1e1e;
+            font-size: 24px;
+            line-height: 64px;
+            text-transform: none;
+        }
+         
+        /* calendar */
+        #block-events-calendar-events-datepicker .views-exposed-widget {
+            width: 100%;
+        }
+        .ui-datepicker table.ui-datepicker-calendar {
+            background: transparent;
+        }
+        .container-inline-date .date-padding {
+            float: none;
+        }
+        .ui-datepicker th {
+            font-family: $bodyFont;
+            color: #000;
+            font-size: 11px;
+            text-transform: uppercase;
+            width: 14.28%;
+            padding-bottom: 3px;
+        }
+        .ui-datepicker-other-month {
+            background: transparent;
+        }
+        .ui-datepicker td {
+            border: none;
+            padding: 0 1px 1px 0;
+        }
+        .ui-datepicker td span,
+        .ui-datepicker td a {
+            background: rgba(#cfb475, 0.05) !important;
+            font-family: $bodyFont;
+            font-size: 14px;
+            line-height: 30px;
+            font-weight: bold;
+            color: #33312f;
+            text-align: center;
+            @include box-shadow(inset 0 0 10px rgba(115,111,103,.15));
+            
+            @media all and (min-width: $screen-lg-min) {
+                line-height: 34px;
+            }
+        }
+
+        .ui-datepicker td.highlighted a {
+            @include box-shadow(inset 0 0 10px rgba(115,111,103,.15) !important);
+            @include background-image(linear-gradient(bottom, rgba(179,155,102,.6), rgba(207,180,117,.6)) !important);
+            
+            &.ui-state-hover {
+                background: #91002c !important;
+                color: #fff !important;
+            }
+        }
+        .ui-datepicker td.highlighted:not(.ui-datepicker-days-cell-over) a {    
+            &.ui-state-active{
+                background: #c9ac69 !important;
+                @include box-shadow(INSET 0 0 10px rgba(#736f67, 0.25));
+            }
+        }
+
+        .ui-datepicker td.ui-datepicker-current-day span,
+        .ui-datepicker td.ui-datepicker-today a {
+            position: relative;
+            color: #33312f !important;
+            border: none !important;
+            
+            &:after {
+                border: 2px #96814e solid;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    
+    
+    

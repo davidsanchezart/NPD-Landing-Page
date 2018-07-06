@@ -1,0 +1,198 @@
+
+    /**
+     * @file _search.scss
+     * @author Jimmy K. <jimmy@orbitmedia.com>
+     */
+
+    #searchWrapper,
+    #mobileSearchWrapper {
+
+        .views-exposed-widgets,
+        .views-exposed-widget {
+            margin: 0;
+            padding: 0;
+        }
+
+        .views-exposed-widget {
+            float: none;
+        }
+
+        form {
+            position: relative;
+        }
+
+        label {
+            display: none;
+        }
+
+        .form-submit {
+
+            @extend %button;
+            width: 50px;
+            height: 40px;
+            font-size: 19px;
+            line-height: 40px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            right: 0;
+            top: -31px;
+            text-indent: 500%;
+
+            &:before {
+                width: 50px;
+                height: 40px;
+                content: "";
+                font-family: "FontAwesome";
+                position: absolute;
+                top: 0;
+                left: 0;
+                text-align: center;
+                text-indent: 0;
+            }
+
+            &:after {
+                content: "";
+            }
+
+        }
+
+    }
+
+    /* ======================================== */
+    /* Mobile Search Form
+    /* ======================================== */
+
+    #mobileSearchWrapper {
+
+        padding: 20px;
+
+    }
+
+    /* ======================================== */
+    /* Desktop Search Icon
+    /* ======================================== */
+
+    #topWrapper .search {
+
+        float: left;
+        margin-left: 30px;
+        position: relative;
+        top: -3px;
+
+        a {
+
+            width: 42px;
+            height: 42px;
+            background: #e2e2e2;
+            @include border-radius(50%);
+            display: block;
+            overflow: hidden;
+            position: relative;
+            text-indent: 500%;
+            @include transition(background-color 0.3s ease);
+
+            &:before {
+                width: 42px;
+                height: 42px;
+                color: #fff;
+                content: "";
+                font-family: "FontAwesome";
+                font-size: 20px;
+                line-height: 42px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                text-align: center;
+                text-indent: 0;
+            }
+
+            &:hover {
+                background: #ccc;
+            }
+
+        }
+
+    }
+
+    /* ======================================== */
+    /* Desktop Search Form
+    /* ======================================== */
+
+    #searchWrapper {
+
+        background: #000;
+        color: #fff;
+        display: none;
+        padding: 12px 0;
+
+        .col {
+
+            position: relative;
+
+            .arrow {
+                width: 25px;
+                height: 9px;
+                background: url('../images/arrow-search.png');
+                position: absolute;
+                right: 28px;
+                bottom: -21px;
+            }
+
+        }
+
+        .views-exposed-widget {
+
+            position: relative;
+
+            &:before {
+                color: #7a7a7a;
+                content: "";
+                font-family: "FontAwesome";
+                font-size: 16px;
+                position: absolute;
+                top: 6px;
+                left: 14px;
+            }
+
+            input[type="text"] {
+                width: 100%;
+                color: #7a7a7a;
+                font-size: 18px;
+                outline: none;
+                padding: 6px 10px 7px 38px;
+            }
+
+        }
+
+        .views-submit-button {
+            display: none;
+        }
+
+    }
+
+    /* ======================================== */
+    /* Search Results
+    /* ======================================== */
+
+    body.page-search {
+
+        .view-site-search {
+
+            .views-row {
+
+                + .views-row {
+                    border-top: 1px solid #000;
+                    margin-top: 20px;
+                    padding-top: 20px;
+                }
+
+                .views-field-title {
+                    font-weight: bold;
+                }
+
+            }
+
+        }
+
+    }

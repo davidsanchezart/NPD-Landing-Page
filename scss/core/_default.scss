@@ -1,0 +1,290 @@
+
+    /**
+     * @file _default.scss
+     * @author Jimmy K. <jimmy@orbitmedia.com>
+     */
+
+    /*
+    @import "compass/css3";
+    @import "core/_placeholders.scss";
+    @import "core/_vars.scss";
+    */
+
+    html,
+    button,
+    a.button {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: none;
+    }
+
+    body {
+        color: $bodyTextColor;
+        font-family: $bodyFont;
+        font-size: 18px;
+        line-height: (30/18);
+    }
+
+    p {
+        margin: 0 0 25px;
+    }
+    
+    ol, ul {
+        padding: 0 0 0 25px;
+        margin: 0 0 25px;
+        
+        li {
+            margin: 10px 0;
+        }
+    }
+
+    hr {
+        border-top: 1px #e7e7e7 solid;
+        height: 0;
+        margin: 35px 0;
+        width: auto;
+    }
+
+    a,
+    a:focus,
+    a:active {
+        color: $primaryLinkColor;
+        text-decoration: none;
+        @include transition(all 0.5s ease);
+        
+        &:hover {
+            color: $primaryRolloverColor;
+            text-decoration: none;
+            @include transition(all 0.3s ease);
+        }
+
+    }
+    a,
+    a:active,
+    a:focus,
+    a:hover {
+        outline: none;
+    }
+
+    iframe {
+        display: block;
+    }
+
+    .icon-search {
+        visibility: visible;
+
+        &:before {
+            @extend %fontawesome;
+            content: '';
+            margin: 0 3px 0 0;
+        }
+    }
+
+    /* ======================================== */
+    /* Buttons
+    /* ======================================== */
+    
+    span.button,
+    p.button a,
+    input.button,
+    button.button,
+    a.button {
+        @extend %button;
+    }
+
+    span.scriptLink,
+    p.scriptLink a,
+    input.scriptLink,
+    button.scriptLink,
+    a.scriptLink {
+        display: inline-block;
+        position: relative;
+        font-size: 20px;
+        color: #fff !important;
+        line-height: 1;
+        text-align: left;
+        text-decoration: none !important;
+        @include transition(none);
+        padding: 0;
+        @extend %appendSingleArrow;
+        &:hover {
+            color: #e8bc2f !important;
+            @include transition(none);
+        }
+    }
+
+    .cta {
+        @extend %appendSingleArrow;
+    }
+
+    /* ======================================== */
+    /* Images
+    /* ======================================== */
+
+    .shadow {
+        @extend %shadow;
+    }
+    .float-left {
+        float: left;
+        margin: 0.5em 1.5em 0.5em 0;
+    }
+    .float-right {
+        float: right;
+        margin: 0.5em 0 0.5em 1.5em;
+    }
+    .float-center {
+        float: none;
+        margin: 0 auto 0.5em;
+    }
+    
+    /* ======================================== */
+    /* Commerce Styles
+    /* ======================================== */
+    
+    /* member messaging */
+    .small-print {
+        font-size: 14px;
+        font-style: italic;
+    }
+    
+    /* product detail */
+    .wine-notes {
+        display: inline-block;
+        font-size: 12px;
+        line-height: 2;
+        padding: 0 0 0 90px;
+        
+        b, strong {
+            display: inline-block;
+            margin: 0 0 0 -90px;
+            padding: 0 5px 0 0;
+            width: 90px;
+        }
+    }
+    
+    /* ======================================== */
+    /* Page Block Styles
+    /* ======================================== */
+    
+    .video-duration {
+        color: #333;
+        font-family: "Adobe Garamond Pro", $fancyFont;
+        font-size: 16px;
+        line-height: (24/16);
+        line-height: inherit;
+        text-transform: none;
+    }
+    .testimonial-author {
+        font-family: $fancyFont;
+        font-size: 20px;
+        font-style: italic;
+        line-height: normal;
+    }
+    
+    /* ======================================== */
+    /* Block Quote
+    /* ======================================== */
+
+    blockquote {
+        border-left: 17px solid $blue;
+        font-family: $fancyFont;
+        color: #0a526a;
+        font-size: 30px;
+        line-height: (40/30);
+        margin: 0 0 25px;
+        padding: 0 0 0 34px;
+        text-align: left;
+
+        &:before {
+            @include circle-quote;
+            color: $blue;
+            position: absolute;
+            left: 23px;
+            margin-top: 12px;
+        }
+
+        p {
+            position: relative;
+            font-size: 30px;
+            line-height: (40/30);
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+
+    // Webfont rendering adjustment
+    .wf-fftisawebpro-n4-active blockquote {
+        padding-top: 1px;
+        p:first-child {
+            margin-top: -12px;
+        }
+    }
+
+    /* ======================================== */
+    /* Headers
+    /* ======================================== */
+    
+    h1, h2, h5, h6 {
+        @extend %headingFontBold;
+        color: $black;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        @extend %headingFontBold;
+        color: $blue;
+    }
+    
+    h4 {
+        font-family: $fancyFont;
+        color: $navy;
+    }
+
+    h1 {
+        font-size: 36px;
+        line-height: (36/46);
+        margin: 0 0 25px;
+
+        @media all and (min-width: $screen-sm-min) {
+            font-size: 40px;
+            line-height: (50/40);
+            margin: 0 0 25px;
+        }
+    }
+
+    h2 {
+        font-size: 30px;
+        line-height: (62/30);
+        margin: 0 0 20px;
+    }
+
+    h3 {
+        font-size: 25px;
+        line-height: (35/25);
+        margin: 0 0 15px;
+    }
+
+    h4 {
+        font-size: 24px;
+        line-height: (36/24);
+        margin: 0 0 25px;
+
+        @media all and (min-width: $screen-sm-min) {
+            font-size: 26px;
+            line-height: (36/26);
+            margin: 0 0 25px;
+        }
+    }
+
+    h5 {
+        font-size: 17px;
+        line-height: (26/17);
+        margin: 5px 0 15px;
+    }
+
+    h6 {
+        font-size: 15px;
+        line-height: (29/15);
+        margin: 0 0 10px;
+    }
